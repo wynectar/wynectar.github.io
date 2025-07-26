@@ -1,0 +1,1 @@
+import{_ as c,c as e,o as s}from"./index-BLpeUSi7.js";const t={},o={class:"light"};function _(a,n){return s(),e("div",o)}const d=c(t,[["render",_],["__scopeId","data-v-d35cc8d6"]]);export{d as default};
