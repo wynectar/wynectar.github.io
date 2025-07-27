@@ -1,1 +1,0 @@
-import{_ as e,c,o as s}from"./index-D3GDPJ_X.js";const n={},o={class:"container"};function t(a,_){return s(),c("div",o)}const d=e(n,[["render",t],["__scopeId","data-v-3e5669f9"]]);export{d as default};

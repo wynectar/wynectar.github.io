@@ -6,12 +6,12 @@ import { useNBRouter } from "@/utils/router";
 const { navigateToError, route } = useNBRouter();
 const id = posts.find((v: any) => new Date(v.time).getTime() == route.params.id)?.id;
 
-import axios from "axios";
+import axios from "@/api/";
 const source = ref("");
 function getSource() {
   if (!id) navigateToError();
-  axios.get(`/api/assets/md/${id}.md`).then((res) => {
-    source.value = res.data;
+  axios.get(`/assets/md/${id}.md`).then((data: any) => {
+    source.value = data;
   });
 }
 onMounted(() => {

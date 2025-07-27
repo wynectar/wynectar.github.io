@@ -11,6 +11,15 @@ export default [
     ...js.configs.recommended,
     languageOptions: {
       globals: globals.browser
+    },
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module'
+    },
+    env: {
+      es2022: true,
+      browser: true,
+      node: true
     }
   },
 
