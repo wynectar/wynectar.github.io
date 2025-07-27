@@ -10,7 +10,7 @@ import axios from "axios";
 const source = ref("");
 function getSource() {
   if (!id) navigateToError();
-  axios.get(`./src/assets/md/${id}.md`).then((res) => {
+  axios.get(`@/assets/md/${id}.md`).then((res) => {
     source.value = res.data;
   });
 }
