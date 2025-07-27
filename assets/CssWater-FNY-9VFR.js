@@ -1,0 +1,1 @@
+import{_ as s,c as t,o as a,a as c}from"./index-D3GDPJ_X.js";const o={},r={class:"container"};function n(_,e){return a(),t("div",r,e[0]||(e[0]=[c("div",{class:"water"},null,-1)]))}const l=s(o,[["render",n],["__scopeId","data-v-8b7ec693"]]);export{l as default};
