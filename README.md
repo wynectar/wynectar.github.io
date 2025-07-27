@@ -1,4 +1,4 @@
-# 基于 Vite4 + Vue3 + Pinia + Ts + Naive UI
+# 基于 Vite6 + Vue3.5 + Pinia + Ts + Naive UI
 
 [vite](https://cn.vitejs.dev/config/)
 [vue](https://cn.vuejs.org/)
