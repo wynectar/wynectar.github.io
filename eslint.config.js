@@ -1,21 +1,33 @@
 // eslint.config.js
-import vuePlugin from 'eslint-plugin-vue';
+import globals from 'globals';
 import js from '@eslint/js';
+import vuePlugin from 'eslint-plugin-vue';
 
 export default [
-  js.configs.recommended,
-  ...vuePlugin.configs['flat/recommended'],
+  // 通用规则
   {
-    rules: {
-      'vue/multi-word-component-names': 'off',
-      'no-unused-vars': 'warn'
-      // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn'
-    },
+    files: ['**/*.{js,ts,vue}'],
+    ignores: ['dist/**', 'node_modules/**'],
+    ...js.configs.recommended,
+    languageOptions: {
+      globals: globals.browser
+    }
+  },
+
+  // Vite 配置文件特殊规则
+  {
+    files: ['vite.config.ts'],
     languageOptions: {
       globals: {
-        defineProps: 'readonly',
-        defineEmits: 'readonly'
+        ...globals.node,
+        defineConfig: 'readonly'
       }
     }
+  },
+
+  // Vue 文件规则
+  {
+    files: ['**/*.vue'],
+    ...vuePlugin.configs['flat/recommended']
   }
 ];

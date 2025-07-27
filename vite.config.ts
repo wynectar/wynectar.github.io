@@ -1,22 +1,29 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from "path";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 3000
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, './src')
+      }
+    }
   },
   base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@ass': path.resolve(__dirname, './src/assets'),
-      '@com': path.resolve(__dirname, './src/components'),
-    },
+      '@com': path.resolve(__dirname, './src/components')
+    }
     // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'], // 导入时想要省略的扩展名列表
-  },
+  }
   // optimizeDeps: {
   //   force: false // 强制进行依赖预构建
   // },
@@ -31,4 +38,4 @@ export default defineConfig({
   //     },
   //   },
   // },
-})
+});

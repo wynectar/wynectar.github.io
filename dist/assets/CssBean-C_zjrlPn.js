@@ -1,1 +1,0 @@
-import{_ as a,c as n,o as t,a as e}from"./index-BLpeUSi7.js";const c={},o={class:"container"};function r(d,s){return t(),n("div",o,s[0]||(s[0]=[e("div",{class:"eat"},[e("span")],-1),e("div",{class:"bean"},null,-1)]))}const l=a(c,[["render",r],["__scopeId","data-v-4e13869d"]]);export{l as default};
