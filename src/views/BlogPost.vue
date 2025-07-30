@@ -10,7 +10,7 @@ import axios from "@/api/";
 const source = ref("");
 function getSource() {
   if (!id) navigateToError();
-  axios.get(`/assets/md/${id}.md`).then((data: any) => {
+  axios.get(`/docs/${id}.md`).then((data: any) => {
     source.value = data;
   });
 }
