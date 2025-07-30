@@ -1,1 +1,0 @@
-import{_ as c,c as e,o as s}from"./index-wdB6x4Re.js";const t={},o={class:"container"};function a(n,_){return s(),e("div",o)}const d=c(t,[["render",a],["__scopeId","data-v-a6563944"]]);export{d as default};
