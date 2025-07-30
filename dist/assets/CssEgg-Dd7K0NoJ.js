@@ -1,1 +1,0 @@
-import{_ as c,c as e,o as s}from"./index-Csh5zGJj.js";const o={},t={class:"egg"};function _(a,n){return s(),e("div",t)}const d=c(o,[["render",_],["__scopeId","data-v-ac198d46"]]);export{d as default};

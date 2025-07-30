@@ -1,42 +1,24 @@
 // eslint.config.js
-import globals from 'globals';
-import js from '@eslint/js';
 import vuePlugin from 'eslint-plugin-vue';
+import tsParser from '@typescript-eslint/parser';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
-  // 通用规则
   {
-    files: ['**/*.{js,ts,vue}'],
-    ignores: ['dist/**', 'node_modules/**'],
-    ...js.configs.recommended,
+    files: ['**/*.ts', '**/*.vue'],
     languageOptions: {
-      globals: globals.browser
-    },
-    parserOptions: {
-      ecmaVersion: 'latest',
+      parser: tsParser,
+      ecmaVersion: 2022,
       sourceType: 'module'
     },
-    env: {
-      es2022: true,
-      browser: true,
-      node: true
-    }
-  },
-
-  // Vite 配置文件特殊规则
-  {
-    files: ['vite.config.ts'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        defineConfig: 'readonly'
-      }
-    }
-  },
-
-  // Vue 文件规则
-  {
-    files: ['**/*.vue'],
-    ...vuePlugin.configs['flat/recommended']
+    plugins: {
+      vue: vuePlugin,
+      '@typescript-eslint': tsPlugin
+    },
+    rules: {
+      // 你的规则配置
+      'vue/multi-word-component-names': 'off' // 如果需要关闭多单词组件名规则
+    },
+    ignores: ['**/node_modules/*', '**/dist/*', '**/build/*', '**/*.d.ts']
   }
 ];

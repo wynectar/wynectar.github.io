@@ -15,6 +15,14 @@
     ],
     "noImplicitAny": false,
     "isolatedModules": true, // Vite 必需配置
+    // "target": "ESNext",
+    // "module": "ESNext",
+    // "strict": true,
+    // "jsx": "preserve",
+    // "moduleResolution": "node",
+    // "esModuleInterop": true,
+    // "skipLibCheck": true,
+    // "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
     "paths": {
       "@/*": [
@@ -27,5 +35,8 @@
         "src/components/*"
       ]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
