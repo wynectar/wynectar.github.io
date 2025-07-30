@@ -2,6 +2,7 @@ import qiankun from '@ass/imgs/post/qiankun.png';
 import nginx from '@ass/imgs/post/nginx.png';
 import apply from '@ass/imgs/post/apply.png';
 import blog from '@ass/imgs/post/blog.jpeg';
+import standard from '@ass/imgs/post/standard.jpeg';
 interface PostItem {
   title: string;
   label: string;
@@ -15,6 +16,15 @@ interface PostItem {
 
 const posts: PostItem[] = [
   {
+    title: '前端项目配置Git提交规范',
+    label: '规范',
+    time: '2024-08-18 22:55',
+    id: 'framework2',
+    desc: '前端项目配置统一提交规范，有利于控制代码质量等',
+    readTime: 4,
+    img: standard
+  },
+  {
     title: '如何使用GitHub Pages托管博客',
     label: 'Blog',
     time: '2024-08-18 22:55',
@@ -27,7 +37,7 @@ const posts: PostItem[] = [
     title: 'qiankun微前端架构使用hash路由从0到1的开发',
     label: '微前端',
     time: '2022-01-22 14:10',
-    id: 'micro1',
+    id: 'framework1',
     desc: '微前端是一种多个团队通过独立发布功能的方式来共同构建现代化 web 应用的技术手段及方法策略。',
     readTime: 12,
     img: qiankun,
