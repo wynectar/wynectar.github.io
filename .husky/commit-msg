@@ -1,53 +1,37 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/bin/bash
 
-# 定义表情映射
-EMOJI_MAP=$(cat <<EOF
-{
-  "feat": "🚀",
-  "fix": "🐛",
-  "docs": "📚",
-  "style": "🎨",
-  "refactor": "♻️",
-  "perf": "⚡️",
-  "test": "🧪",
-  "build": "📦",
-  "ci": "👷",
-  "chore": "🔧",
-  "revert": "⏪"
-}
-EOF
-)
-
-# 获取提交消息文件路径
+# Get commit message file path
 COMMIT_MSG_FILE=$1
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
-# 使用 awk 处理提交消息
-echo "$COMMIT_MSG" | awk -v emoji_map="$EMOJI_MAP" '
+# Process commit message with awk
+awk '
 BEGIN {
-  # 解析 JSON 到 awk 关联数组
-  split(emoji_map, arr, "{|}");
-  pairs = arr[2];
-  gsub(/[[:space:]]+|"/, "", pairs);
-  split(pairs, kv, ",");
-  for (i in kv) {
-    split(kv[i], t, ":");
-    emojis[t[1]] = t[2];
-  }
+  # Define emoji mapping
+  emojis["feat"] = "🚀"
+  emojis["fix"] = "🐛"
+  emojis["docs"] = "📚"
+  emojis["style"] = "🎨"
+  emojis["refactor"] = "♻️"
+  emojis["perf"] = "⚡️"
+  emojis["test"] = "🧪"
+  emojis["build"] = "📦"
+  emojis["ci"] = "👷"
+  emojis["chore"] = "🔧"
+  emojis["revert"] = "⏪"
 }
 {
-  # 匹配常规提交格式 type: description
-  if (match($0, /^([a-z]+)(\([^)]*\))?:/, groups)) {
-    type = groups[1];
+  # Match conventional commit format
+  if ($0 ~ /^[a-z]+(\([^)]*\))?:/) {
+    split($0, parts, /[:\(\)]/)
+    type = parts[1]
     if (type in emojis) {
-      # 在类型后插入表情符号
-      sub(/^([a-z]+)(\([^)]*\))?:/, "&" emojis[type]);
+      # Insert emoji after type
+      sub(/^[a-z]+/, "&" emojis[type])
     }
   }
-  # 打印处理后的消息
   print $0
-}' > "$COMMIT_MSG_FILE.tmp"
+}' "$COMMIT_MSG_FILE" > "$COMMIT_MSG_FILE.tmp"
 
-# 替换原提交消息
+# Replace original commit message
 mv "$COMMIT_MSG_FILE.tmp" "$COMMIT_MSG_FILE"
