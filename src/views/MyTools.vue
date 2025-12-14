@@ -1,32 +1,24 @@
 <script setup lang="ts">
-import { ref, defineAsyncComponent, markRaw } from "vue";
-import { list1 as thirdTools, list2 } from "@/mock/tool.ts";
-import { openWindow } from "@/utils/common";
+import { reactive, defineAsyncComponent, markRaw } from "vue";
+import tools from "@/mock/tools.ts";
 
-const toolList = ref(
-  list2.map((v: any) => {
-    v.component = markRaw(
-      defineAsyncComponent(() => import(`@com/tool/${v.componentName}.vue`))
-    );
-    return v;
-  })
-);
+const toolList = reactive(tools.map((v: any) => {
+  v.component = markRaw(
+    defineAsyncComponent(() => import(`@/components/tools/${v.componentName}.vue`))
+  );
+  return v;
+}));
 </script>
 
 <template>
-  <div class="tools">
-    <n-card title="第三方工具" content-class="card-content">
-      <div class="grid-item" v-for="third in thirdTools" :key="third.name" @click="openWindow(third.url)">
-        <n-image width="80" height="80" preview-disabled :src="third.img" />
-        <div>
-          {{ third.name }}
-        </div>
-      </div>
-    </n-card>
-    <n-card v-for="tool in toolList" :key="tool.componentName" :title="tool.name">
-      <component :is="tool.component"></component>
-    </n-card>
-  </div>
+  <n-collapse default-expanded-names="1" accordion>
+    <n-collapse-item :title="t.name" :name="String(index + 1)" v-for="(t, index) in toolList" :key="index">
+      <!-- 具体某一个工具 -->
+      <n-card v-if="t.component">
+        <component :is="t.component"></component>
+      </n-card>
+    </n-collapse-item>
+  </n-collapse>
 </template>
 
 <style scoped>

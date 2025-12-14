@@ -28,51 +28,52 @@ function renderMenuLabel(option: MenuOptionExtend) {
                 opacity: 0.5, display: 'block', whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-        } }, option.description)]
-})
+            }
+        }, option.description)]
+    })
 }
 
 const initMenu: MenuOptionExtend[] = [
     {
         label: '首页',
         description: '博客文章',
-        key: 'HomePage',
-        path: '/HomePage',
+        key: 'blog-post',
+        path: '/blog-post',
         icon: renderIcon(HomeOutline),
     },
     {
         label: '项目案例',
         description: '持续准备中',
-        key: 'ProjectCase',
-        path: '/ProjectCase',
+        key: 'project-case',
+        path: '/project-case',
         icon: renderIcon(FundProjectionScreenOutlined),
     },
     {
         label: '趣味效果',
         description: '技术及兴趣驱动',
-        key: 'FunEffect',
-        path: '/FunEffect',
+        key: 'fun-effect',
+        path: '/fun-effect',
         icon: renderIcon(AppsOutline),
     },
     {
-        label: '经验教训',
+        label: '经验积累',
         description: '知识积累，问题日志',
-        key: 'ObjectLesson',
-        path: '/ObjectLesson',
+        key: 'object-lesson',
+        path: '/object-lesson',
         icon: renderIcon(Flask),
     },
     {
         label: '我的工具',
         description: '自研及第三方工具',
-        key: 'MyTools',
-        path: '/MyTools',
+        key: 'my-tools',
+        path: '/my-tools',
         icon: renderIcon(ConstructOutline),
     },
     {
         label: '个人空间',
-        description: '好像没什么信息',
-        key: 'PersonalSpace',
-        path: '/PersonalSpace',
+        description: '个人信息 & 参考文档',
+        key: 'personal-space',
+        path: '/personal-space',
         icon: renderIcon(ApertureOutline),
     },
 ]

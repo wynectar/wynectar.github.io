@@ -3,6 +3,13 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import { openWindow } from "@/utils/common";
 const elementRef: any = ref(null);
 const width = ref(0);
+
+/**
+ * ResizeObserver 是一个用于异步监听元素尺寸变化的 JavaScript API，适用于响应式布局、动态内容调整等场景。‌
+ * 
+ * @onMounted 开始观察
+ * @onBeforeUnmount 停止观察
+ * */
 onMounted(() => {
   const observer = new ResizeObserver((entries) => {
     for (let entry of entries) {
@@ -30,8 +37,8 @@ const projectList = ref([
     url: "https://lbs.amap.com/",
   },
   {
-    name: "测试案例2",
-    url: "https://yexiao-fe.github.io/",
+    name: "可视化大屏自适应DEMO",
+    url: "/dashboard/#/adaptive-screen",
   },
 ]);
 </script>
@@ -39,7 +46,9 @@ const projectList = ref([
 <template>
   <div class="grid">
     <div class="grid-item" v-for="pro in projectList" :key="pro.name" @click="openWindow(pro.url)">
-      <div class="title" ref="elementRef">{{ pro.name }}{{ width }}</div>
+      <!-- 标题 -->
+      <div class="title" ref="elementRef">{{ pro.name }}</div>
+      <!-- 容器 -->
       <div class="iframe-box" :style="{ height: `${(width * 9) / 16}px` }">
         <iframe :src="pro.url" frameborder="0" :style="{ transform: `scale(${width / 1920})` }"></iframe>
       </div>
@@ -88,5 +97,6 @@ iframe {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #fff;
 }
 </style>

@@ -1,65 +1,60 @@
-import qiankun from '@ass/imgs/post/qiankun.png';
-import nginx from '@ass/imgs/post/nginx.png';
-import apply from '@ass/imgs/post/apply.png';
-import blog from '@ass/imgs/post/blog.jpeg';
-import standard from '@ass/imgs/post/standard.jpeg';
 interface PostItem {
-  title: string;
-  label: string;
-  time: string;
   id: string;
-  desc: string;
-  readTime: number;
-  img?: string;
-  link?: string;
+  title: string;
+  tag: string;
+  readingTime: string;
+  createTime: string;
 }
 
 const posts: PostItem[] = [
   {
+    id: 'screen-adapter',
+    title: '谈一谈可视化大屏的适配方案',
+    tag: '可视化',
+    readingTime: '4',
+    createTime: '2025-12-12'
+  },
+  {
+    id: 'svg-weather',
+    title: '【交互式天气仪表盘】项目带你快速了解 SVG 知识',
+    tag: 'SVG',
+    readingTime: '10',
+    createTime: '2025-11-28'
+  },
+  {
+    id: 'vitepress-web',
+    title: '基于 VitePress 把 Markdown 编写的内容构建成静态页面并利用 iframe 集成到 Web 页面的实践',
+    tag: 'VitePress',
+    readingTime: '5',
+    createTime: '2025-11-26'
+  },
+  {
+    id: 'config-gitsubmit',
     title: '前端项目配置Git提交规范',
-    label: '规范',
-    time: '2024-08-18 22:55',
-    id: 'framework2',
-    desc: '前端项目配置统一提交规范，有利于控制代码质量等',
-    readTime: 4,
-    img: standard
+    tag: '提交规范',
+    readingTime: '4',
+    createTime: '2024-08-18',
   },
   {
+    id: 'hosting-github',
     title: '如何使用GitHub Pages托管博客',
-    label: 'Blog',
-    time: '2024-08-18 22:55',
-    id: 'blog1',
-    desc: '按照自己的喜好本地创建一个项目，然后把它托管到github上面成为你的定制化博客',
-    readTime: 4,
-    img: blog
+    tag: '代码托管',
+    readingTime: '4',
+    createTime: '2024-08-13',
   },
   {
+    id: 'micro-qiankun',
     title: 'qiankun微前端架构使用hash路由从0到1的开发',
-    label: '微前端',
-    time: '2022-01-22 14:10',
-    id: 'framework1',
-    desc: '微前端是一种多个团队通过独立发布功能的方式来共同构建现代化 web 应用的技术手段及方法策略。',
-    readTime: 12,
-    img: qiankun,
-    link: 'https://juejin.cn/post/7055908074539712520'
+    tag: '微前端',
+    readingTime: '12',
+    createTime: '2022-01-22',
   },
   {
-    title: 'call、apply、bind使用和区别',
-    label: 'JS',
-    time: '2021-10-20 23:59',
-    id: 'js1',
-    desc: 'call、apply、bind我们会经常听到，但是他们究竟是做什么的呢，怎么去使用它们，它们之间又有何差别呢？',
-    readTime: 3,
-    img: apply
-  },
-  {
+    id: 'config-nginx',
     title: '前端与Nginx的不解之缘——Nginx配置和Code部署',
-    label: 'Nginx',
-    time: '2021-07-06 00:56',
-    id: 'nginx1',
-    desc: 'Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。',
-    readTime: 7,
-    img: nginx
+    tag: 'Nginx',
+    readingTime: '7',
+    createTime: '2021-07-06',
   }
 ];
 

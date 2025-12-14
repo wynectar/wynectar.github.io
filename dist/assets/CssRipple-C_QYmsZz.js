@@ -1,1 +1,0 @@
-import{_ as c,c as s,o as a,F as t,f as n,a as r,y as o}from"./index-BU8CiObk.js";const l={},_={class:"ripple"};function f(i,p){return a(),s("div",_,[(a(),s(t,null,n(5,e=>r("span",{style:o({"--coefficient":e-1}),key:e},null,4)),64))])}const u=c(l,[["render",f],["__scopeId","data-v-ffcb3532"]]);export{u as default};

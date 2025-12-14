@@ -18,9 +18,7 @@ export default defineConfig({
   base: '/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@ass': path.resolve(__dirname, './src/assets'),
-      '@com': path.resolve(__dirname, './src/components')
+      '@': path.resolve(__dirname, './src')
     }
     // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'], // 导入时想要省略的扩展名列表
   }

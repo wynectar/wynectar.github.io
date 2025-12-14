@@ -2,33 +2,27 @@
 import postList from "@/mock/posts.ts";
 import { useNBRouter } from "@/utils/router";
 const { routerPush } = useNBRouter();
-function navigateToRouter(item: any) {
-  const timestamp = new Date(item.time).getTime();
-  routerPush(`/BlogPost/${timestamp}`);
+function navigateToRouter(id: string) {
+  routerPush(`/BlogPost/${id}`);
 }
 </script>
 <template>
   <div class="grid">
-    <n-card v-for="post in postList" :key="post.id" class="grid-item" @click="navigateToRouter(post)">
-      <template #cover>
-        <div class="top" :style="{ backgroundImage: `url(${post.img})` }">
-          <n-flex justify="space-between" align="center">
-            <n-tag round size="small">
-              {{ post.label }}
-            </n-tag>
-            <a :href="post.link" target="_blank" rel="noopener noreferrer" v-if="post.link">
-              <n-button type="primary" size="small"> 关联 </n-button>
-            </a>
-          </n-flex>
-        </div>
-      </template>
+    <n-card v-for="p in postList" :key="p.id" hoverable @click="navigateToRouter(p.id)">
       <template #header>
-        <n-ellipsis>{{ post.title }}</n-ellipsis>
+        <n-ellipsis>{{ p.title }}</n-ellipsis>
       </template>
       <template #header-extra>
-        <n-tag round size="small"> 阅读{{ post.readTime }}min </n-tag>
+        <span style="color:cyan">
+          {{ p.readingTime }} min
+        </span>
       </template>
-      <n-ellipsis line-clamp="2">{{ post.desc }}</n-ellipsis>
+      <n-flex justify="space-between">
+        <span>{{ p.createTime }}</span>
+        <n-gradient-text gradient="linear-gradient(90deg, #38bdf8, #818cf8, #c084fc)">
+          {{ p.tag }}
+        </n-gradient-text>
+      </n-flex>
     </n-card>
   </div>
 </template>
@@ -36,7 +30,7 @@ function navigateToRouter(item: any) {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(356px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(580px, auto));
   grid-gap: 20px 20px;
 }
 

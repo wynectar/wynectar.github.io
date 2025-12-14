@@ -1,0 +1,1 @@
+import{_ as t,c as s,e as a,F as c,g as n,a as r,s as o}from"./index-gPywThb7.js";const l={},_={class:"ripple"};function d(i,p){return a(),s("div",_,[(a(),s(c,null,n(5,e=>r("span",{style:o({"--coefficient":e-1}),key:e},null,4)),64))])}const u=t(l,[["render",d],["__scopeId","data-v-1231f8d4"]]);export{u as default};

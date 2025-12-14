@@ -1,7 +1,7 @@
 {
   "name": "nectar-blog",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "prepare": "husky",
     "lint": "eslint --fix --ext .js,.ts,.vue src",
-    "format": "prettier --write src/**/*.{js,ts,vue,json}"
+    "format": "prettier --write src/**/*.{js,ts,vue,json}",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "lint-staged": {
     "*.{js,ts}": [
@@ -49,10 +52,12 @@
     "eslint-plugin-vue": "^10.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
+    "markdown-it-mathjax3": "^4.3.2",
     "naive-ui": "^2.41.0",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
+    "vitepress": "^1.6.4",
     "vue-tsc": "^2.2.8"
   }
 }

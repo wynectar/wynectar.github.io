@@ -4,7 +4,7 @@ import demos from "@/mock/demos.ts";
 const demoList = ref(
   demos.map((v: any) => {
     v.component = markRaw(
-      defineAsyncComponent(() => import(`@com/demo/${v.componentName}.vue`))
+      defineAsyncComponent(() => import(`@/components/demos/${v.componentName}.vue`))
     );
     return v;
   })
@@ -13,9 +13,10 @@ const demoList = ref(
 
 <template>
   <div class="grid">
-    <n-card v-for="demo in demoList" :key="demo.componentName" :title="demo.name" class="grid-item"
-      content-class="card-content" header-class="card-header">
-      <component :is="demo.component"></component>
+    <n-card v-for="d in demoList" :key="d.componentName" :title="d.name" class="grid-item" content-class="card-content"
+      header-class="card-header">
+      <!-- 动态组件显示 -->
+      <component :is="d.component"></component>
     </n-card>
   </div>
 </template>
