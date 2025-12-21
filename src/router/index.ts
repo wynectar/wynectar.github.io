@@ -1,5 +1,6 @@
 /*************函数***************/
 import { createRouter, createWebHashHistory } from 'vue-router';
+import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 
 /*************组件***************/
 import Page404 from '@/views/Page404.vue';
@@ -42,4 +43,31 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 });
+
+import { createDiscreteApi } from 'naive-ui';
+
+// 创建离散API实例
+const { loadingBar } = createDiscreteApi(['loadingBar']);
+// 路由导航守卫
+router.beforeEach(
+  (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+    console.log(to, from);
+    // 开始加载
+    loadingBar.start();
+    next(); // 确保调用 next() 函数
+  }
+);
+
+router.afterEach(() => {
+  // 完成加载
+  setTimeout(() => {
+    loadingBar.finish();
+  }, 200);
+});
+
+router.onError(() => {
+  // 加载出错
+  loadingBar.error();
+});
+
 export default router;
