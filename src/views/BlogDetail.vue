@@ -6,7 +6,9 @@ import { useThemeStore } from '@/stores/theme'
 // 主题模式控制
 const iframe = ref()
 const theme = useThemeStore()
-const show = ref(false)
+const show = ref(!theme.isDark)
+
+console.log(show.value, theme.isDark)
 const stop = watch(() => theme.isDark, () => {
   changeTheme()
 })

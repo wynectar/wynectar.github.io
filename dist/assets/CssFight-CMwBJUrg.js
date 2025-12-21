@@ -1,0 +1,1 @@
+import{_ as c,c as e,m as s}from"./index-BmGw_APX.js";const t={},o={class:"container"};function a(n,_){return s(),e("div",o)}const d=c(t,[["render",a],["__scopeId","data-v-f156dda7"]]);export{d as default};
