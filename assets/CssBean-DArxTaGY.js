@@ -1,1 +1,0 @@
-import{_ as a,c as n,e as t,a as e}from"./index-gPywThb7.js";const c={},o={class:"container"};function r(_,s){return t(),n("div",o,s[0]||(s[0]=[e("div",{class:"eat"},[e("span")],-1),e("div",{class:"bean"},null,-1)]))}const l=a(c,[["render",r],["__scopeId","data-v-1e234b18"]]);export{l as default};

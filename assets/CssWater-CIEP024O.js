@@ -1,1 +1,0 @@
-import{_ as s,c as a,e as t,a as c}from"./index-gPywThb7.js";const o={},r={class:"container"};function n(_,e){return t(),a("div",r,e[0]||(e[0]=[c("div",{class:"water"},null,-1)]))}const l=s(o,[["render",n],["__scopeId","data-v-ab69c97d"]]);export{l as default};
