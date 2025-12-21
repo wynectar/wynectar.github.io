@@ -1,1 +1,0 @@
-import{_ as c,c as e,h as r}from"./index-DzEP_0Bp.js";const s={},o={class:"mirror"};function t(_,a){return r(),e("div",o)}const d=c(s,[["render",t],["__scopeId","data-v-cc1d0e21"]]);export{d as default};

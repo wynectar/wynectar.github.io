@@ -38,11 +38,12 @@ const updateVioce = (val: boolean) => {
 
 /**
  * @menuValue 当前菜单
- * 
+ * @isFull 容器是否撑满
  * @updateMenu 菜单选择
  * @updateMenuVal 更新当前菜单
  * */
 const menuValue = ref("");
+const isFull = ref(false);
 const updateMenu = (val: string, item: any) => {
   menuValue.value = val;
   if (voiceActive.value) {
@@ -52,6 +53,7 @@ const updateMenu = (val: string, item: any) => {
 function updateMenuVal() {
   const component = route.path.split("/")[1];
   menuValue.value = component === "blog-detail" ? "blog-post" : component;
+  isFull.value = component === "blog-detail"
 }
 updateMenuVal();
 onBeforeUpdate(() => {
@@ -130,7 +132,8 @@ onMounted(() => {
           </n-card>
         </n-layout-sider>
         <!-- 右侧内容 -->
-        <n-layout-content content-style="padding: 20px;" :native-scrollbar="false">
+        <n-layout-content :content-style="`padding: 20px;height:${isFull ? '100%' : 'initial'}`"
+          :native-scrollbar="false">
           <RouterView></RouterView>
         </n-layout-content>
       </n-layout>

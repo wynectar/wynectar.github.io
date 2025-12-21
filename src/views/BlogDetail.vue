@@ -66,15 +66,31 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div>
-    <div v-if="checking" class="loading">检查页面是否存在...</div>
-    <div v-else-if="pageExists">
-      <iframe v-show="show" :src="url" @load="onLoad" @error="onError" width="100%" height="800" frameborder="0"
+  <div class="full">
+    <!-- 检查中 -->
+    <n-result status="418" title="检查页面是否存在..." description="" v-if="checking">
+    </n-result>
+    <!-- iframe 主题切换 -->
+    <div v-else-if="pageExists" class="full">
+      <n-result status="418" title="主题切换中..." v-if="!show">
+        <template #icon>
+          <n-spin size="large" />
+        </template>
+      </n-result>
+      <iframe v-show="show" :src="url" @load="onLoad" @error="onError" width="100%" height="100%" frameborder="0"
         ref="iframe"></iframe>
     </div>
-    <div v-else class="not-found">
-      <h3>页面不存在</h3>
-      <p>请求的页面 <code>{{ url }}</code> 不存在</p>
-    </div>
+    <!-- 页面不存在 -->
+    <n-result status="403" title="页面不存在" v-else>
+      <template #footer>
+        请求的页面 <code>{{ url }}</code> 不存在!
+      </template>
+    </n-result>
   </div>
 </template>
+
+<style scoped>
+.full {
+  height: 100%;
+}
+</style>
