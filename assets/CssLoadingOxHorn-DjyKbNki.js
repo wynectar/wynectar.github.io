@@ -1,1 +1,0 @@
-import{_ as c,c as e,h as o}from"./index-DzEP_0Bp.js";const s={},n={class:"loading"};function t(a,_){return o(),e("div",n)}const d=c(s,[["render",t],["__scopeId","data-v-6dd214bb"]]);export{d as default};
