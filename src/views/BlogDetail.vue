@@ -7,8 +7,6 @@ import { useThemeStore } from '@/stores/theme'
 const iframe = ref()
 const theme = useThemeStore()
 const show = ref(!theme.isDark)
-
-console.log(show.value, theme.isDark)
 const stop = watch(() => theme.isDark, () => {
   changeTheme()
 })
