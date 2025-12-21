@@ -1,1 +1,14 @@
-npx lint-staged
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 重定向 stderr 来隐藏警告
+npx --no lint-staged --no-stash 2>/dev/null || {
+    echo ""
+    echo "💥 代码检查失败！"
+    echo "📌 已暂存的文件仍然在暂存区"
+    echo "🛠️  请修复错误后重新提交"
+    echo ""
+    exit 1
+}
+
+echo "✨ 检查通过，可以提交了！"

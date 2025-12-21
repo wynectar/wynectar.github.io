@@ -1,4 +1,4 @@
-# 基于 Vite6 + Vue3.5 + Pinia + Ts + Naive UI
+# 基于 Vite6 + Vue3.5 + Pinia + Ts + Naive UI + Vitepress
 
 [vite](https://cn.vitejs.dev/config/)
 [vue](https://cn.vuejs.org/)
@@ -6,6 +6,7 @@
 [pinia](https://pinia.vuejs.org/zh/core-concepts/)
 [naive ui](https://www.naiveui.com/zh-CN/os-theme/components/button)
 [marked](https://marked.js.org/)
+
 # 项目启动命令
 
 ```bash
@@ -15,11 +16,13 @@ npm run build
 ```
 
 # 项目目录
+
 - 根据命令生成目录树，自定义标注每个文件或文件夹的作用
 - 只记录主要目录，如果有特殊文件或文件夹，请在目录树下面单独标注
 - 向上引用，
 
 ## 目录树
+
 ```
 `项目名称`
 ├── src
@@ -44,6 +47,9 @@ npm run build
 ├── vite.config.ts
 └── yarn.lock
 ```
+
 ## 特殊文件或文件夹标注区域
+
 ```
+
 ```

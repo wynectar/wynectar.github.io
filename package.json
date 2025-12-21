@@ -15,15 +15,11 @@
     "docs:preview": "vitepress preview docs"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.css": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
+    "*.{json,md,html,css,scss}": [
       "prettier --write"
     ]
   },
@@ -34,6 +30,7 @@
     "katex": "^0.16.22",
     "marked": "^15.0.12",
     "marked-katex-extension": "^5.1.5",
+    "pinia": "^3.0.4",
     "vue": "^3.5.13",
     "vue-router": "^4.5.1"
   },

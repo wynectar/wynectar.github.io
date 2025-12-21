@@ -8,25 +8,26 @@ import webSpeech from "@/utils/web-speech";
 import menuOptions from "@/router/menu-options";
 import { useNBRouter } from "@/utils/router";
 const { navigateToDefault, route } = useNBRouter();
+import { useThemeStore } from '@/stores/theme'
+
+// 主题模式控制
+const theme = useThemeStore()
 
 /**
  * @voiceActive 语音模式控制
- * @themeActive 主题模式控制
  * @collapsed 菜单折叠控制
- * 
  * @updateTheme 主题切换
  * @updateVioce 语音切换
  * */
 
 const voiceActive = ref(false);
-const themeActive = ref(false);
 const collapsed = ref(false);
-const updateTheme = (val: boolean) => {
+const updateTheme = () => {
+  theme.change()
   if (voiceActive.value) {
-    const text = val ? "夜间模式开启" : "夜间模式关闭";
+    const text = theme.isDark ? "夜间模式开启" : "夜间模式关闭";
     webSpeech.speak(text);
   }
-  themeActive.value = val;
 };
 const updateVioce = (val: boolean) => {
   const text = val ? "语音播报开启" : "语音播报关闭";
@@ -80,7 +81,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <n-config-provider :theme="themeActive ? darkTheme : null" :locale="zhCN" :date-locale="dateZhCN">
+  <n-config-provider :theme="theme.isDark ? darkTheme : null" :locale="zhCN" :date-locale="dateZhCN">
     <n-layout style="height: 100vh">
       <!-- 顶部信息 -->
       <n-layout-header style="height: 55px; padding: 5px 20px" bordered>
@@ -101,11 +102,11 @@ onMounted(() => {
                 </n-icon>
               </template>
             </n-button>
-            <n-button circle size="small" :type="themeActive ? 'primary' : 'default'" ghost :focusable="false"
-              @click="updateTheme(!themeActive)">
+            <n-button circle size="small" :type="theme.isDark ? 'primary' : 'default'" ghost :focusable="false"
+              @click="updateTheme">
               <template #icon>
                 <n-icon>
-                  <MoonOutline v-if="themeActive" />
+                  <MoonOutline v-if="theme.isDark" />
                   <SunnyOutline v-else />
                 </n-icon>
               </template>
