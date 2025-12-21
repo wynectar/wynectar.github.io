@@ -1,0 +1,1 @@
+import{_ as a,c as n,m as t,i as e}from"./index-CVH9jRvY.js";const c={},o={class:"container"};function r(_,s){return t(),n("div",o,s[0]||(s[0]=[e("div",{class:"eat"},[e("span")],-1),e("div",{class:"bean"},null,-1)]))}const i=a(c,[["render",r],["__scopeId","data-v-1e234b18"]]);export{i as default};
