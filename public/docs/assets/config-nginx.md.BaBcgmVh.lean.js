@@ -1,0 +1,10 @@
+import { _ as i, c as a, o as n, ae as l } from './chunks/framework.DjAKN8N1.js';
+const g = JSON.parse(
+    '{"title":"前端与Nginx的不解之缘——Nginx配置和Code部署","description":"","frontmatter":{"outline":"deep","navbar":false,"sidebar":false},"headers":[],"relativePath":"config-nginx.md","filePath":"config-nginx.md","lastUpdated":1765714477000}'
+  ),
+  p = { name: 'config-nginx.md' };
+function e(h, s, t, k, r, d) {
+  return (n(), a('div', null, s[0] || (s[0] = [l('', 85)])));
+}
+const c = i(p, [['render', e]]);
+export { g as __pageData, c as default };

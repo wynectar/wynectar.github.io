@@ -8,6 +8,13 @@ interface PostItem {
 
 const posts: PostItem[] = [
   {
+    id: 'applet-taro',
+    title: '【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布',
+    tag: '小程序',
+    readingTime: '4',
+    createTime: '2025-12-23'
+  },
+  {
     id: 'screen-adapter',
     title: '谈一谈可视化大屏的适配方案',
     tag: '可视化',
@@ -33,28 +40,28 @@ const posts: PostItem[] = [
     title: '前端项目配置Git提交规范',
     tag: '提交规范',
     readingTime: '4',
-    createTime: '2024-08-18',
+    createTime: '2024-08-18'
   },
   {
     id: 'hosting-github',
     title: '如何使用GitHub Pages托管博客',
     tag: '代码托管',
     readingTime: '4',
-    createTime: '2024-08-13',
+    createTime: '2024-08-13'
   },
   {
     id: 'micro-qiankun',
     title: 'qiankun微前端架构使用hash路由从0到1的开发',
     tag: '微前端',
     readingTime: '12',
-    createTime: '2022-01-22',
+    createTime: '2022-01-22'
   },
   {
     id: 'config-nginx',
     title: '前端与Nginx的不解之缘——Nginx配置和Code部署',
     tag: 'Nginx',
     readingTime: '7',
-    createTime: '2021-07-06',
+    createTime: '2021-07-06'
   }
 ];
 

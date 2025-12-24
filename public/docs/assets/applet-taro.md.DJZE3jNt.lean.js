@@ -1,0 +1,10 @@
+import { _ as a, c as i, o as n, ae as e } from './chunks/framework.DjAKN8N1.js';
+const c = JSON.parse(
+    '{"title":"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布","description":"","frontmatter":{"outline":"deep","navbar":false,"sidebar":false},"headers":[],"relativePath":"applet-taro.md","filePath":"applet-taro.md","lastUpdated":null}'
+  ),
+  p = { name: 'applet-taro.md' };
+function l(t, s, r, h, d, k) {
+  return (n(), i('div', null, s[0] || (s[0] = [e('', 48)])));
+}
+const b = a(p, [['render', l]]);
+export { c as __pageData, b as default };

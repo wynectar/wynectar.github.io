@@ -1,1 +1,0 @@
-import{_ as t,c as s,m as a,F as n,q as r,i as c,B as o}from"./index-CVH9jRvY.js";const _={},l={class:"container"};function d(i,f){return a(),s("div",l,[(a(),s(n,null,r(12,e=>c("span",{style:o({"--i":e-1}),key:e},"我是忘忧",4)),64))])}const p=t(_,[["render",d],["__scopeId","data-v-135a78e7"]]);export{p as default};
