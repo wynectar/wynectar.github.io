@@ -250,6 +250,10 @@ $ NODE_ENV=production taro build --type weapp --watch # Bash
 - [颜色测试](https://image-static.segmentfault.com/263/710/2637109241-694a71357f2b6_fix732)
 - [搭配指南](https://image-static.segmentfault.com/237/582/2375820615-694a71542b4f8_fix732)
 
+### 扫码查看小程序
+
+![扫码查看小程序](./assets/mini-code.jpg)
+
 ## 小程序发布流程
 
 1. 获取AppID(小程序ID) ：[进入微信公众平台](https://mp.weixin.qq.com/)，有账户登陆查询，无账号注册获取

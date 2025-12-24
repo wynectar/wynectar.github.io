@@ -21,9 +21,9 @@ const V = { class: 'gauge-box' },
   G = { class: 'gauge-title' },
   M = { width: '200', height: '150', viewBox: '0 0 200 150' },
   T = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
-  N = ['fill'],
-  P = ['transform'],
-  L = { key: 0, class: 'gauge-value' },
+  P = ['fill'],
+  L = ['transform'],
+  N = { key: 0, class: 'gauge-value' },
   $ = {
     __name: 'GaugeBox',
     props: {
@@ -88,15 +88,15 @@ const V = { class: 'gauge-box' },
                   },
                   null,
                   8,
-                  P
+                  L
                 ),
                 l[0] || (l[0] = s('circle', { cx: '100', cy: '110', r: '4' }, null, -1))
               ],
               8,
-              N
+              P
             )
           ])),
-          a.unit ? (h(), r('div', L, o(a.value) + ' ' + o(a.unit), 1)) : A('', !0)
+          a.unit ? (h(), r('div', N, o(a.value) + ' ' + o(a.unit), 1)) : A('', !0)
         ])
       );
     }
@@ -171,8 +171,8 @@ const V = { class: 'gauge-box' },
     }
   },
   v = F(z, [['__scopeId', 'data-v-e22044d7']]),
-  H = '#74b9ff',
-  O = 100,
+  j = '#74b9ff',
+  H = 100,
   f = {
     __name: 'GaugeHumidity',
     props: { value: { type: Number, default: 40 } },
@@ -181,7 +181,7 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '湿度计', value: a.value, maxValue: O, color: H, unit: '%' },
+          { title: '湿度计', value: a.value, maxValue: H, color: j, unit: '%' },
           {
             default: C(
               () =>
@@ -244,10 +244,10 @@ const V = { class: 'gauge-box' },
     }
   },
   R = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
-  j = { transform: 'translate(175, 40)' },
-  J = '#a29bfe',
-  Q = 30,
-  W = {
+  J = { transform: 'translate(175, 40)' },
+  K = '#a29bfe',
+  W = 30,
+  Q = {
     __name: 'GaugeWind',
     props: { value: { type: Number, default: 8 } },
     setup(a) {
@@ -255,7 +255,7 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '风速计', value: a.value, maxValue: Q, color: J, unit: 'km/h' },
+          { title: '风速计', value: a.value, maxValue: W, color: K, unit: 'km/h' },
           {
             default: C(() => [
               s('g', R, [
@@ -266,7 +266,7 @@ const V = { class: 'gauge-box' },
                     null,
                     -1
                   )),
-                s('g', j, [
+                s('g', J, [
                   s(
                     'g',
                     {
@@ -335,9 +335,9 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  x = F(W, [['__scopeId', 'data-v-31b57ed5']]),
+  x = F(Q, [['__scopeId', 'data-v-31b57ed5']]),
   Y = { class: 'body' },
-  K = { class: 'weather-dashboard' },
+  O = { class: 'weather-dashboard' },
   U = { class: 'dashboard-container' },
   X = { class: 'controls' },
   ss = ['onClick'],
@@ -363,7 +363,7 @@ const V = { class: 'gauge-box' },
       return (l, q) => (
         h(),
         r('div', Y, [
-          s('div', K, [
+          s('div', O, [
             q[0] || (q[0] = s('h1', null, '🌤️ 天气仪表盘', -1)),
             s('div', U, [
               k(v, { value: i.value }, null, 8, ['value']),
