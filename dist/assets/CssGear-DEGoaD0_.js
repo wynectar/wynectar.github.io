@@ -1,0 +1,1 @@
+import{_ as r,c as s,m as a,i as t,F as c,q as n,B as o}from"./index-Bj8u3qcR.js";const _={},l={class:"rotate"},d={class:"gear"};function i(f,m){return a(),s("div",l,[t("div",d,[(a(),s(c,null,n(5,e=>t("span",{style:o({"--i":e-1}),key:e},null,4)),64))])])}const u=r(_,[["render",i],["__scopeId","data-v-7b82f2be"]]);export{u as default};

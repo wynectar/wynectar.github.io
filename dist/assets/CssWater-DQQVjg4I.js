@@ -1,0 +1,1 @@
+import{_ as s,c as t,m as a,i as c}from"./index-Bj8u3qcR.js";const o={},r={class:"container"};function n(_,e){return a(),t("div",r,e[0]||(e[0]=[c("div",{class:"water"},null,-1)]))}const i=s(o,[["render",n],["__scopeId","data-v-ab69c97d"]]);export{i as default};

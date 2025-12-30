@@ -1,0 +1,11 @@
+import { _ as i, c as e, o as l, ae as s } from './chunks/framework.DjAKN8N1.js';
+const p = '/docs/assets/mini-code2.al3cejwS.jpg',
+  k = JSON.parse(
+    '{"title":"【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序","description":"","frontmatter":{"outline":"deep","navbar":false,"sidebar":false},"headers":[],"relativePath":"applet-uni.md","filePath":"applet-uni.md","lastUpdated":null}'
+  ),
+  n = { name: 'applet-uni.md' };
+function t(r, a, h, o, d, c) {
+  return (l(), e('div', null, a[0] || (a[0] = [s('', 28)])));
+}
+const b = i(n, [['render', t]]);
+export { k as __pageData, b as default };

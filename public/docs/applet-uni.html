@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序 | Vitepress Project</title>
+    <meta name="description" content="存储博客文章站点" />
+    <meta name="generator" content="VitePress v1.6.4" />
+    <link rel="preload stylesheet" href="/docs/assets/style.CPamL8rM.css" as="style" />
+    <link rel="preload stylesheet" href="/docs/vp-icons.css" as="style" />
+
+    <script type="module" src="/docs/assets/app.DqawFLVQ.js"></script>
+    <link
+      rel="preload"
+      href="/docs/assets/inter-roman-latin.Di8DUHzh.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link rel="modulepreload" href="/docs/assets/chunks/theme.Ca7s8Vu2.js" />
+    <link rel="modulepreload" href="/docs/assets/chunks/framework.DjAKN8N1.js" />
+    <link rel="modulepreload" href="/docs/assets/applet-uni.md.k4fPosb-.lean.js" />
+    <script id="check-dark-mode">
+      (() => {
+        const e = localStorage.getItem('vitepress-theme-appearance') || 'auto',
+          a = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        (!e || e === 'auto' ? a : e === 'dark') && document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <script id="check-mac-os">
+      document.documentElement.classList.toggle(
+        'mac',
+        /Mac|iPhone|iPod|iPad/i.test(navigator.platform)
+      );
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="Layout" data-v-5d98c3a5>
+        <!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span
+        ><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a
+        ><!--]--><!----><!---->
+        <div class="VPLocalNav empty fixed" data-v-5d98c3a5 data-v-a6f0e41e>
+          <div class="container" data-v-a6f0e41e>
+            <!---->
+            <div
+              class="VPLocalNavOutlineDropdown"
+              style="--vp-vh: 0px"
+              data-v-a6f0e41e
+              data-v-8a42e2b4
+            >
+              <button data-v-8a42e2b4>Return to top</button
+              ><!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="VPContent" id="VPContent" data-v-5d98c3a5 data-v-1428d186>
+          <div class="VPDoc has-aside" data-v-1428d186 data-v-39a288b8>
+            <!--[--><!--]-->
+            <div class="container" data-v-39a288b8>
+              <div class="aside" data-v-39a288b8>
+                <div class="aside-curtain" data-v-39a288b8></div>
+                <div class="aside-container" data-v-39a288b8>
+                  <div class="aside-content" data-v-39a288b8>
+                    <div class="VPDocAside" data-v-39a288b8 data-v-3f215769>
+                      <!--[--><!--]--><!--[--><!--]-->
+                      <nav
+                        aria-labelledby="doc-outline-aria-label"
+                        class="VPDocAsideOutline"
+                        data-v-3f215769
+                        data-v-a5bbad30
+                      >
+                        <div class="content" data-v-a5bbad30>
+                          <div class="outline-marker" data-v-a5bbad30></div>
+                          <div
+                            aria-level="2"
+                            class="outline-title"
+                            id="doc-outline-aria-label"
+                            role="heading"
+                            data-v-a5bbad30
+                          >
+                            页面导航
+                          </div>
+                          <ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997>
+                            <!--[--><!--]-->
+                          </ul>
+                        </div>
+                      </nav>
+                      <!--[--><!--]-->
+                      <div class="spacer" data-v-3f215769></div>
+                      <!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content" data-v-39a288b8>
+                <div class="content-container" data-v-39a288b8>
+                  <!--[--><!--]-->
+                  <main class="main" data-v-39a288b8>
+                    <div style="position: relative" class="vp-doc _docs_applet-uni" data-v-39a288b8>
+                      <div>
+                        <h1 id="【寓乐猜灯谜】基于-uni-app-vue3-pinia-的微信小程序" tabindex="-1">
+                          【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序
+                          <a
+                            class="header-anchor"
+                            href="#【寓乐猜灯谜】基于-uni-app-vue3-pinia-的微信小程序"
+                            aria-label='Permalink to "【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序"'
+                            >​</a
+                          >
+                        </h1>
+                        <h2 id="工欲善其事" tabindex="-1">
+                          工欲善其事
+                          <a
+                            class="header-anchor"
+                            href="#工欲善其事"
+                            aria-label='Permalink to "工欲善其事"'
+                            >​</a
+                          >
+                        </h2>
+                        <ol>
+                          <li>
+                            <p>
+                              <a
+                                href="https://www.dcloud.io/hbuilderx.html"
+                                target="_blank"
+                                rel="noreferrer"
+                                >安装HBuilderX</a
+                              >，<a
+                                href="https://hx.dcloud.net.cn/README"
+                                target="_blank"
+                                rel="noreferrer"
+                                >HBuilderX 相关</a
+                              >
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <a
+                                href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html"
+                                target="_blank"
+                                rel="noreferrer"
+                                >微信开发者工具下载</a
+                              >
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <a
+                                href="https://uniapp.dcloud.net.cn/quickstart-hx.html"
+                                target="_blank"
+                                rel="noreferrer"
+                                >uni-app 快速上手官方指导</a
+                              >
+                            </p>
+                          </li>
+                        </ol>
+                        <h2 id="uni-app-开发流程" tabindex="-1">
+                          uni-app 开发流程
+                          <a
+                            class="header-anchor"
+                            href="#uni-app-开发流程"
+                            aria-label='Permalink to "uni-app 开发流程"'
+                            >​</a
+                          >
+                        </h2>
+                        <h3 id="创建uni-app" tabindex="-1">
+                          创建uni-app
+                          <a
+                            class="header-anchor"
+                            href="#创建uni-app"
+                            aria-label='Permalink to "创建uni-app"'
+                            >​</a
+                          >
+                        </h3>
+                        <ol>
+                          <li>
+                            <p>
+                              在点击工具栏里的<code>文件 -&gt; 新建 -&gt; 项目</code>（快捷键
+                              <code>Ctrl+N</code>）
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              选择
+                              <code>uni-app</code>
+                              类型，输入<code>工程名</code>，选择<code>模板</code>，点击<code>创建</code>，即可成功创建。
+                            </p>
+                            <ul>
+                              <li>日常开发推荐使用 <code>uni ui项目模板</code></li>
+                              <li>Vue 版本选择</li>
+                            </ul>
+                          </li>
+                        </ol>
+                        <h3 id="运行uni-app" tabindex="-1">
+                          运行uni-app
+                          <a
+                            class="header-anchor"
+                            href="#运行uni-app"
+                            aria-label='Permalink to "运行uni-app"'
+                            >​</a
+                          >
+                        </h3>
+                        <h4 id="方式一-工具栏运行" tabindex="-1">
+                          方式一：工具栏运行
+                          <a
+                            class="header-anchor"
+                            href="#方式一-工具栏运行"
+                            aria-label='Permalink to "方式一：工具栏运行"'
+                            >​</a
+                          >
+                        </h4>
+                        <p>
+                          <code>在微信开发者工具里运行</code
+                          >：进入hello-uniapp项目，点击工具栏的<code
+                            >运行 -&gt; 运行到小程序模拟器 -&gt; 微信开发者工具</code
+                          >，即可在微信开发者工具里面体验uni-app。
+                        </p>
+                        <div class="tip custom-block">
+                          <p class="custom-block-title">TIP</p>
+                          <ul>
+                            <li>
+                              🔥如果是第一次使用，HBuilderX 需要配置开发工具的相关路径。点击
+                              <code>HBuilderX</code> 工具栏的<code
+                                >运行 -&gt; 运行到小程序模拟器 -&gt; 运行设置</code
+                              >，配置相应小程序开发者工具的路径。
+                            </li>
+                            <li>
+                              🔥微信小程序工具需要配置允许权限。点击
+                              <code>微信开发者工具</code> 工具栏的<code>设置 -&gt; 安全设置</code
+                              >，开启服务端口。
+                            </li>
+                            <li>
+                              如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX
+                              控制台提示的项目路径，打开项目。
+                            </li>
+                          </ul>
+                        </div>
+                        <h4 id="方式二-快捷方式运行" tabindex="-1">
+                          方式二：快捷方式运行
+                          <a
+                            class="header-anchor"
+                            href="#方式二-快捷方式运行"
+                            aria-label='Permalink to "方式二：快捷方式运行"'
+                            >​</a
+                          >
+                        </h4>
+                        <ol>
+                          <li>
+                            <p>快捷键运行 <code>Ctrl+R</code></p>
+                          </li>
+                          <li>
+                            <p>
+                              HBuilderX <code>快捷运行菜单</code>，可以按数字快速选择要运行的设备
+                            </p>
+                          </li>
+                        </ol>
+                        <h3 id="发布uni-app" tabindex="-1">
+                          发布uni-app
+                          <a
+                            class="header-anchor"
+                            href="#发布uni-app"
+                            aria-label='Permalink to "发布uni-app"'
+                            >​</a
+                          >
+                        </h3>
+                        <ol>
+                          <li>
+                            <p>
+                              <a
+                                href="https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7"
+                                target="_blank"
+                                rel="noreferrer"
+                                >申请微信小程序AppID</a
+                              >
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              在HBuilderX中顶部菜单依次点击
+                              <code>&quot;发行&quot; =&gt; &quot;小程序-微信&quot;</code
+                              >，输入<code>小程序名称</code>和<code>appid</code>点击发行即可
+                            </p>
+                          </li>
+                          <li>
+                            <p><code>微信开发者工具</code>工具中真机调试无误后，点击上传</p>
+                          </li>
+                        </ol>
+                        <h2 id="uni-app-配置" tabindex="-1">
+                          uni-app 配置
+                          <a
+                            class="header-anchor"
+                            href="#uni-app-配置"
+                            aria-label='Permalink to "uni-app 配置"'
+                            >​</a
+                          >
+                        </h2>
+                        <ol>
+                          <li>
+                            <p>
+                              <code>settings.json</code>：即 HBuilderX 工具中<code
+                                >运行 -&gt; 运行到小程序模拟器 -&gt; 运行设置</code
+                              >，找到相应的小程序开发者工具配置位置，浏览工具路径并选择配置。
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <code>开启服务端口</code>：即<code>微信开发者工具</code>工具中<code
+                                >设置 -&gt; 安全设置</code
+                              >开启。
+                            </p>
+                          </li>
+                        </ol>
+                        <h2 id="寓乐猜灯谜" tabindex="-1">
+                          寓乐猜灯谜
+                          <a
+                            class="header-anchor"
+                            href="#寓乐猜灯谜"
+                            aria-label='Permalink to "寓乐猜灯谜"'
+                            >​</a
+                          >
+                        </h2>
+                        <h3 id="项目结构" tabindex="-1">
+                          项目结构
+                          <a
+                            class="header-anchor"
+                            href="#项目结构"
+                            aria-label='Permalink to "项目结构"'
+                            >​</a
+                          >
+                        </h3>
+                        <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                          <button title="Copy Code" class="copy"></button
+                          ><span class="lang">bash</span>
+                          <pre
+                            class="shiki shiki-themes github-light github-dark vp-code"
+                            tabindex="0"
+                          ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">uni-guess-riddle/</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> pages/</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   ├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> index/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">         # 首页</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   ├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> review/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        # 题目回顾</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   └──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> game/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">          # 游戏页面</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> static/</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   └──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> images/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        # 静态图片</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> store/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">             # Pinia状态管理</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">└──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> uni.scss</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">           # 全局样式</span></span></code></pre>
+                          <div class="line-numbers-wrapper" aria-hidden="true">
+                            <span class="line-number">1</span><br /><span class="line-number"
+                              >2</span
+                            ><br /><span class="line-number">3</span><br /><span class="line-number"
+                              >4</span
+                            ><br /><span class="line-number">5</span><br /><span class="line-number"
+                              >6</span
+                            ><br /><span class="line-number">7</span><br /><span class="line-number"
+                              >8</span
+                            ><br /><span class="line-number">9</span><br />
+                          </div>
+                        </div>
+                        <h3 id="首页" tabindex="-1">
+                          首页
+                          <a class="header-anchor" href="#首页" aria-label='Permalink to "首页"'
+                            >​</a
+                          >
+                        </h3>
+                        <p>可选择游戏模式：</p>
+                        <ul>
+                          <li><p>简单模式：8道简单题，适合新手</p></li>
+                          <li><p>普通模式：10道随机难度题（推荐）</p></li>
+                          <li><p>困难模式：12道题，包含高难度题目</p></li>
+                        </ul>
+                        <h3 id="游戏页面" tabindex="-1">
+                          游戏页面
+                          <a
+                            class="header-anchor"
+                            href="#游戏页面"
+                            aria-label='Permalink to "游戏页面"'
+                            >​</a
+                          >
+                        </h3>
+                        <ol>
+                          <li>
+                            <p>🔄 随机题目系统</p>
+                            <ul>
+                              <li><p>灯谜库包含400+条谜语，分类丰富</p></li>
+                              <li><p>每次游戏随机抽取题目</p></li>
+                              <li><p>保证每次游戏体验都不同</p></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <p>📊 智能评分系统</p>
+                            <ul>
+                              <li><p>基础分：简单10分/中等20分/困难30分</p></li>
+                              <li><p>时间奖励：答对越快，加分越多（最高30分）</p></li>
+                              <li><p>提示扣分：使用提示扣除5分</p></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <p>📈 详细数据统计</p>
+                            <ul>
+                              <li><p>最终得分</p></li>
+                              <li><p>用时统计</p></li>
+                              <li><p>答对题数</p></li>
+                              <li><p>准确率</p></li>
+                              <li><p>游戏模式记录</p></li>
+                            </ul>
+                          </li>
+                        </ol>
+                        <h3 id="题目回顾" tabindex="-1">
+                          题目回顾
+                          <a
+                            class="header-anchor"
+                            href="#题目回顾"
+                            aria-label='Permalink to "题目回顾"'
+                            >​</a
+                          >
+                        </h3>
+                        <p>展示了本局答题信息。</p>
+                        <h3 id="效果" tabindex="-1">
+                          效果
+                          <a class="header-anchor" href="#效果" aria-label='Permalink to "效果"'
+                            >​</a
+                          >
+                        </h3>
+                        <ol>
+                          <li>
+                            <p>
+                              从git上下载代码后，导入
+                              <code>HBuilderX</code> 后运行即可查看效果，代码如下：
+                            </p>
+                            <ul>
+                              <li>
+                                <a
+                                  href="https://github.com/wynectar/uni-guess-riddle"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  >Github 地址</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  href="https://gitee.com/wynectar/uni-guess-riddle"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  >Gitee 地址</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <p>扫码查看小程序：</p>
+                            <p>
+                              <img
+                                src="/docs/assets/mini-code2.al3cejwS.jpg"
+                                alt="微信小程序码"
+                                loading="lazy"
+                              />
+                            </p>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </main>
+                  <footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d>
+                    <!--[--><!--]--><!---->
+                    <nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d>
+                      <span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d
+                        >Pager</span
+                      >
+                      <div class="pager" data-v-e257564d><!----></div>
+                      <div class="pager" data-v-e257564d>
+                        <a
+                          class="VPLink link pager-link next"
+                          href="/docs/applet-taro.html"
+                          data-v-e257564d
+                          ><!--[--><span class="desc" data-v-e257564d>下一篇</span
+                          ><span class="title" data-v-e257564d
+                            >【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布</span
+                          ><!--]--></a
+                        >
+                      </div>
+                    </nav>
+                  </footer>
+                  <!--[--><!--]-->
+                </div>
+              </div>
+            </div>
+            <!--[--><!--]-->
+          </div>
+        </div>
+        <!----><!--[--><!--]-->
+      </div>
+    </div>
+    <script>
+      window.__VP_HASH_MAP__ = JSON.parse(
+        '{"a-example.md":"BYXX_zHk","applet-taro.md":"C_BIP16p","applet-uni.md":"k4fPosb-","config-gitsubmit.md":"6w1UhFvS","config-nginx.md":"BaBcgmVh","hosting-github.md":"BclWdEu5","index.md":"BO29apd1","micro-qiankun.md":"ye8wvPNi","screen-adapter.md":"D89zgnHr","svg-weather.md":"TsezEINi","vitepress-web.md":"lgqkSlog"}'
+      );
+      window.__VP_SITE_DATA__ = JSON.parse(
+        '{"lang":"zh-CN","dir":"ltr","title":"Vitepress Project","description":"存储博客文章站点","base":"/docs/","head":[],"router":{"prefetchLinks":true},"appearance":true,"themeConfig":{"outline":{"level":[2,6],"label":"页面导航"},"docFooter":{"prev":"上一篇","next":"下一篇"},"nav":[{"text":"Home","link":"/"},{"text":"Entrance","link":"/vitepress-web"}],"sidebar":[{"text":"忘忧博客","items":[{"text":"【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小游戏","link":"/applet-uni"},{"text":"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布","link":"/applet-taro"},{"text":"谈一谈可视化大屏的适配方案","link":"/screen-adapter"},{"text":"基于 VitePress 把 Markdown 编写的内容构建成静态页面并利用 iframe 集成到 Web 页面的实践","link":"/vitepress-web"},{"text":"【交互式天气仪表盘】项目带你快速了解 SVG 知识","link":"/svg-weather"},{"text":"如何使用GitHub Pages托管博客","link":"/hosting-github"},{"text":"前端项目配置Git提交规范","link":"/config-gitsubmit"},{"text":"前端与Nginx的不解之缘——Nginx配置和Code部署","link":"/config-nginx"},{"text":"qiankun微前端架构使用hash路由从0到1的开发","link":"/micro-qiankun"}]}],"socialLinks":[{"icon":"github","link":"https://github.com/wynectar"}]},"locales":{},"scrollOffset":134,"cleanUrls":false}'
+      );
+    </script>
+  </body>
+</html>

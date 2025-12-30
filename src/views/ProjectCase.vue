@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { openWindow } from "@/utils/common";
+import MiniCode from "@/components/projects/MiniCode.vue";
+
 const elementRef: any = ref(null);
 const width = ref(0);
 
@@ -33,8 +35,9 @@ onBeforeUnmount(() => {
 
 const projectList = ref([
   {
-    name: "测试案例",
-    url: "https://lbs.amap.com/",
+    name: "微信小程序",
+    url: "",
+    compoent: MiniCode
   },
   {
     name: "可视化大屏自适应DEMO",
@@ -50,7 +53,8 @@ const projectList = ref([
       <div class="title" ref="elementRef">{{ pro.name }}</div>
       <!-- 容器 -->
       <div class="iframe-box" :style="{ height: `${(width * 9) / 16}px` }">
-        <iframe :src="pro.url" frameborder="0" :style="{ transform: `scale(${width / 1920})` }"></iframe>
+        <iframe v-if="pro.url" :src="pro.url" frameborder="0" :style="{ transform: `scale(${width / 1920})` }"></iframe>
+        <component v-else :is="pro.compoent"></component>
       </div>
     </div>
   </div>

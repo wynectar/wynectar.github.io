@@ -8,8 +8,15 @@ interface PostItem {
 
 const posts: PostItem[] = [
   {
+    id: 'applet-uni',
+    title: '【寓教于乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序',
+    tag: '小程序',
+    readingTime: '3',
+    createTime: '2025-12-30'
+  },
+  {
     id: 'applet-taro',
-    title: '【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布',
+    title: '【Today 幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布',
     tag: '小程序',
     readingTime: '4',
     createTime: '2025-12-23'

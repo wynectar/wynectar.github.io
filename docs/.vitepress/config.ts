@@ -43,6 +43,10 @@ export default defineConfig({
         text: '忘忧博客',
         items: [
           {
+            text: '【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小游戏',
+            link: '/applet-uni'
+          },
+          {
             text: '【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布',
             link: '/applet-taro'
           },
