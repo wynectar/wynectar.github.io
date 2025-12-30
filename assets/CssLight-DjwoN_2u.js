@@ -1,1 +1,0 @@
-import{_ as c,c as e,m as s}from"./index-uUoRXPJ3.js";const t={},o={class:"light"};function _(a,n){return s(),e("div",o)}const d=c(t,[["render",_],["__scopeId","data-v-43dbdb72"]]);export{d as default};
