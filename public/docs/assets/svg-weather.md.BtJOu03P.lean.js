@@ -1,23 +1,23 @@
 import {
   _ as F,
   p as g,
-  h as y,
+  h as o,
   c as r,
   o as h,
   j as s,
-  e as A,
-  t as o,
+  e as x,
+  t as y,
   r as D,
   b,
   w as C,
   N as w,
   G as k,
   F as _,
-  B as S,
+  B as V,
   ae as E,
   a as d
 } from './chunks/framework.DjAKN8N1.js';
-const V = { class: 'gauge-box' },
+const S = { class: 'gauge-box' },
   G = { class: 'gauge-title' },
   M = { width: '200', height: '150', viewBox: '0 0 200 150' },
   T = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
@@ -36,12 +36,12 @@ const V = { class: 'gauge-box' },
     setup(a) {
       const n = a,
         i = g(188.5),
-        p = y(() => i.value - ((n.value || 0) / n.maxValue) * i.value),
-        e = y(() => `rotate(${-90 + ((n.value || 0) / n.maxValue) * 180})`);
+        p = o(() => i.value - ((n.value || 0) / n.maxValue) * i.value),
+        e = o(() => `rotate(${-90 + ((n.value || 0) / n.maxValue) * 180})`);
       return (t, l) => (
         h(),
-        r('div', V, [
-          s('div', G, o(a.title), 1),
+        r('div', S, [
+          s('div', G, y(a.title), 1),
           (h(),
           r('svg', M, [
             l[1] ||
@@ -96,31 +96,31 @@ const V = { class: 'gauge-box' },
               N
             )
           ])),
-          a.unit ? (h(), r('div', P, o(a.value) + ' ' + o(a.unit), 1)) : A('', !0)
+          a.unit ? (h(), r('div', P, y(a.value) + ' ' + y(a.unit), 1)) : x('', !0)
         ])
       );
     }
   },
   u = F($, [['__scopeId', 'data-v-9b76d40f']]),
-  z = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
-  R = ['y', 'height'],
-  m = '#ff7675',
-  B = 40,
-  H = {
+  H = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
+  Z = ['y', 'height'],
+  q = '#ff7675',
+  m = 40,
+  I = {
     __name: 'GaugeTemperature',
     props: { value: { type: Number, default: 28 } },
     setup(a) {
       const n = a,
-        i = y(() => ((n.value || 0) / B) * 56),
-        p = y(() => 98 - i.value);
+        i = o(() => ((n.value || 0) / m) * 56),
+        p = o(() => 98 - i.value);
       return (e, t) => (
         h(),
         b(
           u,
-          { title: '温度计', value: a.value, maxValue: B, color: m, unit: '°C' },
+          { title: '温度计', value: a.value, maxValue: m, color: q, unit: '°C' },
           {
             default: C(() => [
-              s('g', z, [
+              s('g', H, [
                 t[0] ||
                   (t[0] = s(
                     'rect',
@@ -132,10 +132,10 @@ const V = { class: 'gauge-box' },
                   (t[1] = s('circle', { cx: '20', cy: '110', r: '6', fill: '#ff7675' }, null, -1)),
                 s(
                   'rect',
-                  { x: '17', y: p.value, width: '6', height: i.value, rx: '3', fill: m },
+                  { x: '17', y: p.value, width: '6', height: i.value, rx: '3', fill: q },
                   null,
                   8,
-                  R
+                  Z
                 ),
                 t[2] ||
                   (t[2] = s(
@@ -170,9 +170,9 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  v = F(H, [['__scopeId', 'data-v-e22044d7']]),
-  I = '#74b9ff',
-  Z = 100,
+  v = F(I, [['__scopeId', 'data-v-e22044d7']]),
+  z = '#74b9ff',
+  j = 100,
   f = {
     __name: 'GaugeHumidity',
     props: { value: { type: Number, default: 40 } },
@@ -181,7 +181,7 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '湿度计', value: a.value, maxValue: Z, color: I, unit: '%' },
+          { title: '湿度计', value: a.value, maxValue: j, color: z, unit: '%' },
           {
             default: C(
               () =>
@@ -243,10 +243,10 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  j = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
-  O = { transform: 'translate(175, 40)' },
-  W = '#a29bfe',
-  Q = 30,
+  R = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
+  W = { transform: 'translate(175, 40)' },
+  Y = '#a29bfe',
+  O = 30,
   U = {
     __name: 'GaugeWind',
     props: { value: { type: Number, default: 8 } },
@@ -255,10 +255,10 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '风速计', value: a.value, maxValue: Q, color: W, unit: 'km/h' },
+          { title: '风速计', value: a.value, maxValue: O, color: Y, unit: 'km/h' },
           {
             default: C(() => [
-              s('g', j, [
+              s('g', R, [
                 i[1] ||
                   (i[1] = s(
                     'rect',
@@ -266,7 +266,7 @@ const V = { class: 'gauge-box' },
                     null,
                     -1
                   )),
-                s('g', O, [
+                s('g', W, [
                   s(
                     'g',
                     {
@@ -335,11 +335,11 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  x = F(U, [['__scopeId', 'data-v-31b57ed5']]),
-  X = { class: 'body' },
-  Y = { class: 'weather-dashboard' },
-  J = { class: 'dashboard-container' },
-  K = { class: 'controls' },
+  A = F(U, [['__scopeId', 'data-v-31b57ed5']]),
+  J = { class: 'body' },
+  Q = { class: 'weather-dashboard' },
+  K = { class: 'dashboard-container' },
+  X = { class: 'controls' },
   ss = ['onClick'],
   is = {
     __name: 'index',
@@ -360,22 +360,22 @@ const V = { class: 'gauge-box' },
             (e.value = Math.floor(Math.random() * 30)))
           : ((i.value = l.temperature), (p.value = l.humidity), (e.value = l.wind));
       }
-      return (l, q) => (
+      return (l, B) => (
         h(),
-        r('div', X, [
-          s('div', Y, [
-            q[0] || (q[0] = s('h1', null, '🌤️ 天气仪表盘', -1)),
-            s('div', J, [
+        r('div', J, [
+          s('div', Q, [
+            B[0] || (B[0] = s('h1', null, '🌤️ 天气仪表盘', -1)),
+            s('div', K, [
               k(v, { value: i.value }, null, 8, ['value']),
               k(f, { value: p.value }, null, 8, ['value']),
-              k(x, { value: e.value }, null, 8, ['value'])
+              k(A, { value: e.value }, null, 8, ['value'])
             ]),
-            s('div', K, [
+            s('div', X, [
               (h(),
               r(
                 _,
                 null,
-                S(n, c => s('button', { onClick: ts => t(c), key: c.type }, o(c.text), 9, ss)),
+                V(n, c => s('button', { onClick: ts => t(c), key: c.type }, y(c.text), 9, ss)),
                 64
               ))
             ])
@@ -401,7 +401,7 @@ const V = { class: 'gauge-box' },
           i[2] || (i[2] = E('', 9)),
           k(f),
           i[3] || (i[3] = E('', 6)),
-          k(x),
+          k(A),
           i[4] ||
             (i[4] = s(
               'h2',

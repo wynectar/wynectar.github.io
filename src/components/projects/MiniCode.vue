@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import code from '@docs/assets/mini-code.jpg'
-import code2 from '@docs/assets/mini-code2.jpg'
+import codeTaro from '@docs/assets/mini-code-taro.jpg'
+import codeUni from '@docs/assets/mini-code-uni.jpg'
 
 const miniList = [
-    { name: "寓教于乐猜灯谜", url: code2 },
-    { name: "Today 幸运色", url: code },
+    { name: "寓教于乐灯谜", url: codeUni },
+    { name: "Today 幸运色", url: codeTaro },
 ]
 </script>
 

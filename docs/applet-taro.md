@@ -26,7 +26,8 @@ sidebar: false
 #### 方式一
 
 1. 需要使用 npm 或者 yarn 全局安装 `@tarojs/cli`
-   ::: code-group
+
+::: code-group
 
 ```bash [npm]
 npm install -g @tarojs/cli
@@ -252,7 +253,7 @@ $ NODE_ENV=production taro build --type weapp --watch # Bash
 
 ### 扫码查看小程序
 
-![扫码查看小程序](./assets/mini-code.jpg)
+![扫码查看小程序](./assets/mini-code-taro.jpg)
 
 ## 小程序发布流程
 

@@ -1,7 +1,15 @@
 export default [
   {
+    question: 'vitepress 打包时报错：[vitepress] 1 dead link(s) found.',
+    tag: 'VitePress',
+    answer: `<ol>
+            <li>使用 --logLevel=info 查看详细信息：<green>npm run docs:build -- --logLevel=info</green></li>
+            <li>或者直接使用 vitepress 命令：<green>npx vitepress build docs --logLevel=info</green></li>
+        </ol>`
+  },
+  {
     question: '提交时报错并丢失代码：husky - pre-commit script failed (code 1) ，怎么找回?',
-    tag: 'git',
+    tag: 'Git',
     answer: `<ol>
             <li>试着查看暂存库列表：<green>git stash list </green></li>
             <li>恢复暂存库：<green>git stash  apply </green></li>
@@ -47,7 +55,7 @@ export default [
   },
   {
     question: 'github master分支下的dist文件夹推送到gh-pages分支',
-    tag: 'git',
+    tag: 'Git',
     answer: `<ol>
             <li>第一步前提条件：dist需先提交到master分支</li>
             <li>第二步快捷命令：<green>git subtree push --prefix dist origin gh-pages</green></li>

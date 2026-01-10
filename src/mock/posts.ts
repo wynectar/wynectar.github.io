@@ -8,10 +8,17 @@ interface PostItem {
 
 const posts: PostItem[] = [
   {
+    id: 'gui-electron',
+    title: '基于 Vite + Electron + Vue-ts 的桌面应用模版',
+    tag: 'GUI',
+    readingTime: '13',
+    createTime: '2026-01-10'
+  },
+  {
     id: 'applet-uni',
-    title: '【寓教于乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小程序',
+    title: '【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序',
     tag: '小程序',
-    readingTime: '3',
+    readingTime: '2',
     createTime: '2025-12-30'
   },
   {

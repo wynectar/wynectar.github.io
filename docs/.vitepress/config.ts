@@ -43,7 +43,11 @@ export default defineConfig({
         text: '忘忧博客',
         items: [
           {
-            text: '【寓乐猜灯谜】基于 uni-app + vue3 + pinia 的微信小游戏',
+            text: '基于 Vite + Electron + Vue-ts 的桌面应用模版',
+            link: '/gui-electron'
+          },
+          {
+            text: '【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序',
             link: '/applet-uni'
           },
           {
