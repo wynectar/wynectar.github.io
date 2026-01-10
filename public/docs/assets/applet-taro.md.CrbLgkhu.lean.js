@@ -1,7 +1,7 @@
 import { _ as a, c as i, o as n, ae as e } from './chunks/framework.DjAKN8N1.js';
 const p = '/docs/assets/mini-code-taro.QF7bhEhc.jpg',
   b = JSON.parse(
-    '{"title":"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布","description":"","frontmatter":{"outline":"deep","navbar":false,"sidebar":false},"headers":[],"relativePath":"applet-taro.md","filePath":"applet-taro.md","lastUpdated":1766587274000}'
+    '{"title":"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布","description":"","frontmatter":{"outline":"deep","navbar":false,"sidebar":false},"headers":[],"relativePath":"applet-taro.md","filePath":"applet-taro.md","lastUpdated":1768057251000}'
   ),
   l = { name: 'applet-taro.md' };
 function t(r, s, h, d, k, o) {
