@@ -1,1 +1,0 @@
-import{_ as c,c as e,m as r}from"./index-Bj8u3qcR.js";const s={},o={class:"mirror"};function t(_,a){return r(),e("div",o)}const d=c(s,[["render",t],["__scopeId","data-v-cc1d0e21"]]);export{d as default};
