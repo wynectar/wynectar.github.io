@@ -2,6 +2,7 @@
 import { darkTheme, NIcon, zhCN, dateZhCN } from "naive-ui";
 import logo from "@/assets/imgs/logo.jpeg";
 import { ref, onBeforeUpdate, onMounted } from "vue";
+import { Github } from "@vicons/fa";
 import { AudioMutedOutlined, AudioFilled } from "@vicons/antd";
 import { SunnyOutline, MoonOutline } from "@vicons/ionicons5";
 import webSpeech from "@/utils/web-speech";
@@ -113,6 +114,15 @@ onMounted(() => {
                 </n-icon>
               </template>
             </n-button>
+            <a href="https://github.com/wynectar" target="_blank" rel="noopener noreferrer">
+              <n-button circle size="small" ghost :focusable="false">
+                <template #icon>
+                  <n-icon>
+                    <Github />
+                  </n-icon>
+                </template>
+              </n-button>
+            </a>
           </n-flex>
         </n-flex>
       </n-layout-header>

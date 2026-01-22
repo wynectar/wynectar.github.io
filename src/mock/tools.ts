@@ -45,6 +45,11 @@ export default [
     component: null
   },
   {
+    name: '图片生成GIF工具',
+    componentName: 'ImgToGif',
+    component: null
+  },
+  {
     name: '日期时间转换',
     componentName: 'DatetimeConversion',
     component: null

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, defineAsyncComponent, markRaw } from "vue";
+import { reactive, defineAsyncComponent, markRaw, computed } from "vue";
 import tools from "@/mock/tools.ts";
 
 const toolList = reactive(tools.map((v: any) => {
@@ -11,14 +11,14 @@ const toolList = reactive(tools.map((v: any) => {
 </script>
 
 <template>
-  <n-collapse default-expanded-names="1" accordion>
-    <n-collapse-item :title="t.name" :name="String(index + 1)" v-for="(t, index) in toolList" :key="index">
-      <!-- 具体某一个工具 -->
-      <n-card v-if="t.component">
+  <div class="tools">
+    <n-tabs type="line" animated @update:value="">
+      <n-tab-pane :name="t.componentName" :tab="t.name" v-for="(t, index) in toolList" :key="index">
         <component :is="t.component"></component>
-      </n-card>
-    </n-collapse-item>
-  </n-collapse>
+      </n-tab-pane>
+    </n-tabs>
+
+  </div>
 </template>
 
 <style scoped>
