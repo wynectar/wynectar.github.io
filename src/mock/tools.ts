@@ -46,7 +46,7 @@ export default [
   },
   {
     name: '图片生成GIF工具',
-    componentName: 'ImgToGif',
+    componentName: 'GifGenerator2',
     component: null
   },
   {

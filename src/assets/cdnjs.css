@@ -1,0 +1,5 @@
+/* 通过 @import 引入 CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* 或者引入本地文件（如果下载了） */
+/* @import url('/fonts/font-awesome/all.min.css'); */

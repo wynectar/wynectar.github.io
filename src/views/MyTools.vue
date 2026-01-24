@@ -12,7 +12,7 @@ const toolList = reactive(tools.map((v: any) => {
 
 <template>
   <div class="tools">
-    <n-tabs type="line" animated @update:value="">
+    <n-tabs type="line" animated>
       <n-tab-pane :name="t.componentName" :tab="t.name" v-for="(t, index) in toolList" :key="index">
         <component :is="t.component"></component>
       </n-tab-pane>
@@ -22,25 +22,11 @@ const toolList = reactive(tools.map((v: any) => {
 </template>
 
 <style scoped>
-.tools>div {
-  margin-bottom: 40px;
-}
-
-:deep(.card-content) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
-  grid-gap: 20px 20px;
-}
-
-.grid-item {
-  padding: 20px 0;
-  border-radius: 20px;
-  text-align: center;
-  cursor: pointer;
-  background-color: rgba(79, 186, 242, 0.5);
-}
-
-.grid-item:hover {
-  background-color: rgba(79, 186, 242, 1);
+.tools :deep(.n-tabs-nav) {
+  position: sticky;
+  z-index: 1;
+  top: 20px;
+  background: var(--n-color);
+  box-shadow: 0 12px 0 var(--n-color), 0 -20px 0 var(--n-color);
 }
 </style>

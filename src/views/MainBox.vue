@@ -54,7 +54,7 @@ const updateMenu = (val: string, item: any) => {
 function updateMenuVal() {
   const component = route.path.split("/")[1];
   menuValue.value = component === "blog-detail" ? "blog-post" : component;
-  isFull.value = component === "blog-detail"
+  isFull.value = ["blog-detail"].includes(component)
 }
 updateMenuVal();
 onBeforeUpdate(() => {
