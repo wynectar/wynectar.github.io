@@ -1,0 +1,1 @@
+import{_ as t,c as s,m as a,F as c,q as n,i as r,B as o}from"./index-BkTa8GwT.js";const l={},_={class:"ripple"};function i(d,p){return a(),s("div",_,[(a(),s(c,null,n(5,e=>r("span",{style:o({"--coefficient":e-1}),key:e},null,4)),64))])}const m=t(l,[["render",i],["__scopeId","data-v-1231f8d4"]]);export{m as default};
