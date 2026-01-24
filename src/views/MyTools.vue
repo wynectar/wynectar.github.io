@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, defineAsyncComponent, markRaw, computed } from "vue";
+import { reactive, defineAsyncComponent, markRaw } from "vue";
 import tools from "@/mock/tools.ts";
 
 const toolList = reactive(tools.map((v: any) => {
