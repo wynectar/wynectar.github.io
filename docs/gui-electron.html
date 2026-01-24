@@ -1,24 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>基于 Vite + Electron + Vue-ts 的桌面应用模版 | Vitepress Project</title>
-    <meta name="description" content="存储博客文章站点">
-    <meta name="generator" content="VitePress v1.6.4">
-    <link rel="preload stylesheet" href="/docs/assets/style.CPamL8rM.css" as="style">
-    <link rel="preload stylesheet" href="/docs/vp-icons.css" as="style">
-    
+    <meta name="description" content="存储博客文章站点" />
+    <meta name="generator" content="VitePress v1.6.4" />
+    <link rel="preload stylesheet" href="/docs/assets/style.CPamL8rM.css" as="style" />
+    <link rel="preload stylesheet" href="/docs/vp-icons.css" as="style" />
+
     <script type="module" src="/docs/assets/app.DqawFLVQ.js"></script>
-    <link rel="preload" href="/docs/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="modulepreload" href="/docs/assets/chunks/theme.Ca7s8Vu2.js">
-    <link rel="modulepreload" href="/docs/assets/chunks/framework.DjAKN8N1.js">
-    <link rel="modulepreload" href="/docs/assets/gui-electron.md.D3ff0DT2.lean.js">
-    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+    <link
+      rel="preload"
+      href="/docs/assets/inter-roman-latin.Di8DUHzh.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link rel="modulepreload" href="/docs/assets/chunks/theme.Ca7s8Vu2.js" />
+    <link rel="modulepreload" href="/docs/assets/chunks/framework.DjAKN8N1.js" />
+    <link rel="modulepreload" href="/docs/assets/gui-electron.md.Dlvq1xbt.lean.js" />
+    <script id="check-dark-mode">
+      (() => {
+        const e = localStorage.getItem('vitepress-theme-appearance') || 'auto',
+          a = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        (!e || e === 'auto' ? a : e === 'dark') && document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <script id="check-mac-os">
+      document.documentElement.classList.toggle(
+        'mac',
+        /Mac|iPhone|iPod|iPad/i.test(navigator.platform)
+      );
+    </script>
   </head>
   <body>
-    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><!----><div class="VPLocalNav empty fixed" data-v-5d98c3a5 data-v-a6f0e41e><div class="container" data-v-a6f0e41e><!----><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-a6f0e41e data-v-8a42e2b4><button data-v-8a42e2b4>Return to top</button><!----></div></div></div><!----><div class="VPContent" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPDoc has-aside" data-v-1428d186 data-v-39a288b8><!--[--><!--]--><div class="container" data-v-39a288b8><div class="aside" data-v-39a288b8><div class="aside-curtain" data-v-39a288b8></div><div class="aside-container" data-v-39a288b8><div class="aside-content" data-v-39a288b8><div class="VPDocAside" data-v-39a288b8 data-v-3f215769><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-3f215769 data-v-a5bbad30><div class="content" data-v-a5bbad30><div class="outline-marker" data-v-a5bbad30></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-a5bbad30>页面导航</div><ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-39a288b8><div class="content-container" data-v-39a288b8><!--[--><!--]--><main class="main" data-v-39a288b8><div style="position:relative;" class="vp-doc _docs_gui-electron" data-v-39a288b8><div><h1 id="基于-vite-electron-vue-ts-的桌面应用模版" tabindex="-1">基于 Vite + Electron + Vue-ts 的桌面应用模版 <a class="header-anchor" href="#基于-vite-electron-vue-ts-的桌面应用模版" aria-label="Permalink to &quot;基于 Vite + Electron + Vue-ts 的桌面应用模版&quot;">​</a></h1><h2 id="技术选型" tabindex="-1">技术选型 <a class="header-anchor" href="#技术选型" aria-label="Permalink to &quot;技术选型&quot;">​</a></h2><p>嵌入 <code>Chromium</code> 和 <code>Node.js</code> 到 二进制的 Electron 是一个框架，使开发者能够将 Web 技术(HTML、JavaScript、CSS)、Node.js 及原生代码相结合，<code>构建适用于 macOS、Windows 和 Linux 的跨平台桌面应用程序</code>。 它<code>基于MIT开源许可证</code>，对商业和个人用途均免费。</p><p><code>所需依赖：</code></p><ul><li><p><img src="https://img.shields.io/badge/Node-24.12.0-%235FA04E?style=flat&amp;logo=node.js" alt="Static Badge" loading="lazy"></p></li><li><p><img src="https://img.shields.io/badge/Electron-39.2.7-%2347848F?style=flat&amp;logo=electron" alt="Static Badge" loading="lazy"></p></li><li><p><img src="https://img.shields.io/badge/Vite-7.2.4-%236E9F18?style=flat&amp;logo=vitest" alt="Static Badge" loading="lazy"></p></li><li><p><img src="https://img.shields.io/badge/Vue-3.5.24-%234FC08D?style=flat&amp;logo=vue.js" alt="Static Badge" loading="lazy"></p></li></ul><h2 id="搭建项目模版" tabindex="-1">搭建项目模版 <a class="header-anchor" href="#搭建项目模版" aria-label="Permalink to &quot;搭建项目模版&quot;">​</a></h2><h3 id="搭建-vite-项目" tabindex="-1">搭建 Vite 项目 <a class="header-anchor" href="#搭建-vite-项目" aria-label="Permalink to &quot;搭建 Vite 项目&quot;">​</a></h3><p>搭建vite项目时，可以选择任意框架模版，比如react、vue等，本项目选择的是vue模版。</p><ul><li><p>方式一：命令逐步创建</p><ol><li>执行命令<div class="vp-code-group vp-adaptive-theme"><div class="tabs"></div><div class="blocks"></div></div></li></ol><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite@latest</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">bun</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">deno</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> init</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>::: 2. 选择需要的框架模版，创建项目名称等</p><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span></span>
+    <div id="app">
+      <div class="Layout" data-v-5d98c3a5>
+        <!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span
+        ><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a
+        ><!--]--><!----><!---->
+        <div class="VPLocalNav empty fixed" data-v-5d98c3a5 data-v-a6f0e41e>
+          <div class="container" data-v-a6f0e41e>
+            <!---->
+            <div
+              class="VPLocalNavOutlineDropdown"
+              style="--vp-vh: 0px"
+              data-v-a6f0e41e
+              data-v-8a42e2b4
+            >
+              <button data-v-8a42e2b4>Return to top</button
+              ><!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="VPContent" id="VPContent" data-v-5d98c3a5 data-v-1428d186>
+          <div class="VPDoc has-aside" data-v-1428d186 data-v-39a288b8>
+            <!--[--><!--]-->
+            <div class="container" data-v-39a288b8>
+              <div class="aside" data-v-39a288b8>
+                <div class="aside-curtain" data-v-39a288b8></div>
+                <div class="aside-container" data-v-39a288b8>
+                  <div class="aside-content" data-v-39a288b8>
+                    <div class="VPDocAside" data-v-39a288b8 data-v-3f215769>
+                      <!--[--><!--]--><!--[--><!--]-->
+                      <nav
+                        aria-labelledby="doc-outline-aria-label"
+                        class="VPDocAsideOutline"
+                        data-v-3f215769
+                        data-v-a5bbad30
+                      >
+                        <div class="content" data-v-a5bbad30>
+                          <div class="outline-marker" data-v-a5bbad30></div>
+                          <div
+                            aria-level="2"
+                            class="outline-title"
+                            id="doc-outline-aria-label"
+                            role="heading"
+                            data-v-a5bbad30
+                          >
+                            页面导航
+                          </div>
+                          <ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997>
+                            <!--[--><!--]-->
+                          </ul>
+                        </div>
+                      </nav>
+                      <!--[--><!--]-->
+                      <div class="spacer" data-v-3f215769></div>
+                      <!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content" data-v-39a288b8>
+                <div class="content-container" data-v-39a288b8>
+                  <!--[--><!--]-->
+                  <main class="main" data-v-39a288b8>
+                    <div
+                      style="position: relative"
+                      class="vp-doc _docs_gui-electron"
+                      data-v-39a288b8
+                    >
+                      <div>
+                        <h1 id="基于-vite-electron-vue-ts-的桌面应用模版" tabindex="-1">
+                          基于 Vite + Electron + Vue-ts 的桌面应用模版
+                          <a
+                            class="header-anchor"
+                            href="#基于-vite-electron-vue-ts-的桌面应用模版"
+                            aria-label='Permalink to "基于 Vite + Electron + Vue-ts 的桌面应用模版"'
+                            >​</a
+                          >
+                        </h1>
+                        <h2 id="技术选型" tabindex="-1">
+                          技术选型
+                          <a
+                            class="header-anchor"
+                            href="#技术选型"
+                            aria-label='Permalink to "技术选型"'
+                            >​</a
+                          >
+                        </h2>
+                        <p>
+                          嵌入 <code>Chromium</code> 和 <code>Node.js</code> 到 二进制的 Electron
+                          是一个框架，使开发者能够将 Web 技术(HTML、JavaScript、CSS)、Node.js
+                          及原生代码相结合，<code
+                            >构建适用于 macOS、Windows 和 Linux 的跨平台桌面应用程序</code
+                          >。 它<code>基于MIT开源许可证</code>，对商业和个人用途均免费。
+                        </p>
+                        <p><code>所需依赖：</code></p>
+                        <ul>
+                          <li>
+                            <p>
+                              <img
+                                src="https://img.shields.io/badge/Node-24.12.0-%235FA04E?style=flat&amp;logo=node.js"
+                                alt="Static Badge"
+                                loading="lazy"
+                              />
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <img
+                                src="https://img.shields.io/badge/Electron-39.2.7-%2347848F?style=flat&amp;logo=electron"
+                                alt="Static Badge"
+                                loading="lazy"
+                              />
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <img
+                                src="https://img.shields.io/badge/Vite-7.2.4-%236E9F18?style=flat&amp;logo=vitest"
+                                alt="Static Badge"
+                                loading="lazy"
+                              />
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <img
+                                src="https://img.shields.io/badge/Vue-3.5.24-%234FC08D?style=flat&amp;logo=vue.js"
+                                alt="Static Badge"
+                                loading="lazy"
+                              />
+                            </p>
+                          </li>
+                        </ul>
+                        <h2 id="搭建项目模版" tabindex="-1">
+                          搭建项目模版
+                          <a
+                            class="header-anchor"
+                            href="#搭建项目模版"
+                            aria-label='Permalink to "搭建项目模版"'
+                            >​</a
+                          >
+                        </h2>
+                        <h3 id="搭建-vite-项目" tabindex="-1">
+                          搭建 Vite 项目
+                          <a
+                            class="header-anchor"
+                            href="#搭建-vite-项目"
+                            aria-label='Permalink to "搭建 Vite 项目"'
+                            >​</a
+                          >
+                        </h3>
+                        <p>
+                          搭建vite项目时，可以选择任意框架模版，比如react、vue等，本项目选择的是vue模版。
+                        </p>
+                        <ul>
+                          <li>
+                            <p>方式一：命令逐步创建</p>
+                            <ol>
+                              <li>
+                                执行命令
+                                <div class="vp-code-group vp-adaptive-theme">
+                                  <div class="tabs"></div>
+                                  <div class="blocks"></div>
+                                </div>
+                              </li>
+                            </ol>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite@latest</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">bun</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">deno</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> init</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <p>::: 2. 选择需要的框架模版，创建项目名称等</p>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">◇</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  Project</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> name:</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  vite-electron</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span></span>
@@ -33,16 +278,313 @@
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">◆</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  Install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> with</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> and</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> start</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> now?</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">  ●</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> Yes</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> /</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ○</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> No</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">└</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li><li><p>方式二：命令选项创建</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group--Fbfo" id="tab-gM6iUFe" checked><label data-title="npm" for="tab-gM6iUFe">npm</label><input type="radio" name="group--Fbfo" id="tab-iXUoLYM"><label data-title="Yarn" for="tab-iXUoLYM">Yarn</label><input type="radio" name="group--Fbfo" id="tab-V1DgsHo"><label data-title="pnpm" for="tab-V1DgsHo">pnpm</label><input type="radio" name="group--Fbfo" id="tab-HXeC97k"><label data-title="bun" for="tab-HXeC97k">bun</label><input type="radio" name="group--Fbfo" id="tab-iAAveks"><label data-title="Deno" for="tab-iAAveks">Deno</label></div><div class="blocks"><div class="language-bash vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># npm 7+，需要添加额外的 --：</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite@latest</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">bun</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">deno</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> init</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div></div></div><p>查看 <a href="https://github.com/vitejs/vite/tree/main/packages/create-vite" target="_blank" rel="noreferrer">create-vite</a> 以获取每个模板的更多细节：<code>vanilla</code>，<code>vanilla-ts</code>，<code>vue</code>，<code>vue-ts</code>，<code>react</code>，<code>react-ts</code>，<code>react-swc</code>，<code>react-swc-ts</code>，<code>preact</code>，<code>preact-ts</code>，<code>lit</code>，<code>lit-ts</code>，<code>svelte</code>，<code>svelte-ts</code>，<code>solid</code>，<code>solid-ts</code>，<code>qwik</code>，<code>qwik-ts</code>。</p></li></ul><div class="tip custom-block"><p class="custom-block-title">提示</p><ul><li>Vite 需要 Node.js 版本 <code>20.19+</code>, <code>22.12+</code>。然而，有些模板需要依赖更高的 Node 版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。</li><li>使用 <code>.</code> 作为项目名称则表示在当前目录中创建项目脚手架。</li><li>要创建一个没有交互式提示的项目，你可以使用 <code>--no-interactive</code> 标志。</li></ul></div><h3 id="安装-electron-相关依赖" tabindex="-1">安装 electron 相关依赖 <a class="header-anchor" href="#安装-electron-相关依赖" aria-label="Permalink to &quot;安装 electron 相关依赖&quot;">​</a></h3><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-NVoFD" id="tab-toUzeb5" checked><label data-title="npm" for="tab-toUzeb5">npm</label><input type="radio" name="group-NVoFD" id="tab-oZLsXwx"><label data-title="Yarn" for="tab-oZLsXwx">Yarn</label></div><div class="blocks"><div class="language-bash vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># --save-dev 可以简写为：-D</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron-builder</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --save-dev</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># --dev 可以简写为：-D</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron-builder</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --dev</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div></div><p><code>electron-builder</code>：是一个强大的应用打包和分发工具，用于将 Electron 应用构建为平台特定的安装程序（如 <code>Windows 的 .exe</code>、<code>macOS 的 .dmg</code> 或 <code>Linux 的 .deb</code>）。它支持自动更新、代码签名、创建图标以及处理原生依赖，简化了跨平台分发流程。‌</p><h3 id="安装其他依赖" tabindex="-1">安装其他依赖 <a class="header-anchor" href="#安装其他依赖" aria-label="Permalink to &quot;安装其他依赖&quot;">​</a></h3><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-pEsfK" id="tab-Po0sYqj" checked><label data-title="npm" for="tab-Po0sYqj">npm</label><input type="radio" name="group-pEsfK" id="tab-C4OHBSY"><label data-title="Yarn" for="tab-C4OHBSY">Yarn</label></div><div class="blocks"><div class="language-bash vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> concurrently</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> cross-env</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wait-on</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">└</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br />
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <p>方式二：命令选项创建</p>
+                            <div class="vp-code-group vp-adaptive-theme">
+                              <div class="tabs">
+                                <input
+                                  type="radio"
+                                  name="group-Y3RFc"
+                                  id="tab-W7xBiDo"
+                                  checked
+                                /><label data-title="npm" for="tab-W7xBiDo">npm</label
+                                ><input type="radio" name="group-Y3RFc" id="tab-kEc9dEG" /><label
+                                  data-title="Yarn"
+                                  for="tab-kEc9dEG"
+                                  >Yarn</label
+                                ><input type="radio" name="group-Y3RFc" id="tab-NHEKXA_" /><label
+                                  data-title="pnpm"
+                                  for="tab-NHEKXA_"
+                                  >pnpm</label
+                                ><input type="radio" name="group-Y3RFc" id="tab-OT4Jo_B" /><label
+                                  data-title="bun"
+                                  for="tab-OT4Jo_B"
+                                  >bun</label
+                                ><input type="radio" name="group-Y3RFc" id="tab-ofISA7r" /><label
+                                  data-title="Deno"
+                                  for="tab-ofISA7r"
+                                  >Deno</label
+                                >
+                              </div>
+                              <div class="blocks">
+                                <div
+                                  class="language-bash vp-adaptive-theme active line-numbers-mode"
+                                >
+                                  <button title="Copy Code" class="copy"></button
+                                  ><span class="lang">bash</span>
+                                  <pre
+                                    class="shiki shiki-themes github-light github-dark vp-code"
+                                    tabindex="0"
+                                  ><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># npm 7+，需要添加额外的 --：</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite@latest</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre>
+                                  <div class="line-numbers-wrapper" aria-hidden="true">
+                                    <span class="line-number">1</span><br /><span
+                                      class="line-number"
+                                      >2</span
+                                    ><br />
+                                  </div>
+                                </div>
+                                <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                                  <button title="Copy Code" class="copy"></button
+                                  ><span class="lang">bash</span>
+                                  <pre
+                                    class="shiki shiki-themes github-light github-dark vp-code"
+                                    tabindex="0"
+                                  ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre>
+                                  <div class="line-numbers-wrapper" aria-hidden="true">
+                                    <span class="line-number">1</span><br />
+                                  </div>
+                                </div>
+                                <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                                  <button title="Copy Code" class="copy"></button
+                                  ><span class="lang">bash</span>
+                                  <pre
+                                    class="shiki shiki-themes github-light github-dark vp-code"
+                                    tabindex="0"
+                                  ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">pnpm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre>
+                                  <div class="line-numbers-wrapper" aria-hidden="true">
+                                    <span class="line-number">1</span><br />
+                                  </div>
+                                </div>
+                                <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                                  <button title="Copy Code" class="copy"></button
+                                  ><span class="lang">bash</span>
+                                  <pre
+                                    class="shiki shiki-themes github-light github-dark vp-code"
+                                    tabindex="0"
+                                  ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">bun</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre>
+                                  <div class="line-numbers-wrapper" aria-hidden="true">
+                                    <span class="line-number">1</span><br />
+                                  </div>
+                                </div>
+                                <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                                  <button title="Copy Code" class="copy"></button
+                                  ><span class="lang">bash</span>
+                                  <pre
+                                    class="shiki shiki-themes github-light github-dark vp-code"
+                                    tabindex="0"
+                                  ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">deno</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> init</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite-electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --template</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vue</span></span></code></pre>
+                                  <div class="line-numbers-wrapper" aria-hidden="true">
+                                    <span class="line-number">1</span><br />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <p>
+                              查看
+                              <a
+                                href="https://github.com/vitejs/vite/tree/main/packages/create-vite"
+                                target="_blank"
+                                rel="noreferrer"
+                                >create-vite</a
+                              >
+                              以获取每个模板的更多细节：<code>vanilla</code>，<code>vanilla-ts</code>，<code>vue</code>，<code>vue-ts</code>，<code>react</code>，<code>react-ts</code>，<code>react-swc</code>，<code>react-swc-ts</code>，<code>preact</code>，<code>preact-ts</code>，<code>lit</code>，<code>lit-ts</code>，<code>svelte</code>，<code>svelte-ts</code>，<code>solid</code>，<code>solid-ts</code>，<code>qwik</code>，<code>qwik-ts</code>。
+                            </p>
+                          </li>
+                        </ul>
+                        <div class="tip custom-block">
+                          <p class="custom-block-title">提示</p>
+                          <ul>
+                            <li>
+                              Vite 需要 Node.js 版本 <code>20.19+</code>,
+                              <code>22.12+</code>。然而，有些模板需要依赖更高的 Node
+                              版本才能正常运行，当你的包管理器发出警告时，请注意升级你的 Node 版本。
+                            </li>
+                            <li>
+                              使用 <code>.</code> 作为项目名称则表示在当前目录中创建项目脚手架。
+                            </li>
+                            <li>
+                              要创建一个没有交互式提示的项目，你可以使用
+                              <code>--no-interactive</code> 标志。
+                            </li>
+                          </ul>
+                        </div>
+                        <h3 id="安装-electron-相关依赖" tabindex="-1">
+                          安装 electron 相关依赖
+                          <a
+                            class="header-anchor"
+                            href="#安装-electron-相关依赖"
+                            aria-label='Permalink to "安装 electron 相关依赖"'
+                            >​</a
+                          >
+                        </h3>
+                        <div class="vp-code-group vp-adaptive-theme">
+                          <div class="tabs">
+                            <input type="radio" name="group-jXf70" id="tab-Qp9QHXo" checked /><label
+                              data-title="npm"
+                              for="tab-Qp9QHXo"
+                              >npm</label
+                            ><input type="radio" name="group-jXf70" id="tab-cK_AR7z" /><label
+                              data-title="Yarn"
+                              for="tab-cK_AR7z"
+                              >Yarn</label
+                            >
+                          </div>
+                          <div class="blocks">
+                            <div class="language-bash vp-adaptive-theme active line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># --save-dev 可以简写为：-D</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron-builder</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --save-dev</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># --dev 可以简写为：-D</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> electron-builder</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --dev</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <code>electron-builder</code>：是一个强大的应用打包和分发工具，用于将
+                          Electron 应用构建为平台特定的安装程序（如
+                          <code>Windows 的 .exe</code>、<code>macOS 的 .dmg</code> 或
+                          <code>Linux 的 .deb</code
+                          >）。它支持自动更新、代码签名、创建图标以及处理原生依赖，简化了跨平台分发流程。‌
+                        </p>
+                        <h3 id="安装其他依赖" tabindex="-1">
+                          安装其他依赖
+                          <a
+                            class="header-anchor"
+                            href="#安装其他依赖"
+                            aria-label='Permalink to "安装其他依赖"'
+                            >​</a
+                          >
+                        </h3>
+                        <div class="vp-code-group vp-adaptive-theme">
+                          <div class="tabs">
+                            <input type="radio" name="group-qd810" id="tab-78_kWdz" checked /><label
+                              data-title="npm"
+                              for="tab-78_kWdz"
+                              >npm</label
+                            ><input type="radio" name="group-qd810" id="tab-3z8R0k4" /><label
+                              data-title="Yarn"
+                              for="tab-3z8R0k4"
+                              >Yarn</label
+                            >
+                          </div>
+                          <div class="blocks">
+                            <div class="language-bash vp-adaptive-theme active line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> concurrently</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> cross-env</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wait-on</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 类型声明</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> @types/electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> concurrently</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> cross-env</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wait-on</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> install</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> @types/electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> concurrently</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> cross-env</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> wait-on</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 类型声明</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> @types/electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div></div><ul><li><p><code>wait-on</code>：用于等待某个条件就绪后再执行后续命令。常见场景是监听HTTP端口（如<code>http://localhost:3000</code>）或文件，确保前端服务完全启动后再启动Electron，避免因服务未就绪导致的错误。‌</p></li><li><p><code>concurrently</code>：允许在单个终端命令中同时执行多个脚本。例如，在Electron开发中，可以并行启动前端开发服务器和Electron主进程，提升效率。‌</p></li><li><p><code>cross-env</code>：实现跨平台环境变量设置。它允许在package.json的scripts中统一设置环境变量（如BROWSER=none），避免在不同操作系统（如Windows和macOS）上因命令差异导致的问题</p></li></ul><h3 id="增加项目结构" tabindex="-1">增加项目结构 <a class="header-anchor" href="#增加项目结构" aria-label="Permalink to &quot;增加项目结构&quot;">​</a></h3><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">vite-</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">yarn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> @types/electron</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -D</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <ul>
+                          <li>
+                            <p>
+                              <code>wait-on</code
+                              >：用于等待某个条件就绪后再执行后续命令。常见场景是监听HTTP端口（如<code>http://localhost:3000</code>）或文件，确保前端服务完全启动后再启动Electron，避免因服务未就绪导致的错误。‌
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <code>concurrently</code
+                              >：允许在单个终端命令中同时执行多个脚本。例如，在Electron开发中，可以并行启动前端开发服务器和Electron主进程，提升效率。‌
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <code>cross-env</code
+                              >：实现跨平台环境变量设置。它允许在package.json的scripts中统一设置环境变量（如BROWSER=none），避免在不同操作系统（如Windows和macOS）上因命令差异导致的问题
+                            </p>
+                          </li>
+                        </ul>
+                        <h3 id="增加项目结构" tabindex="-1">
+                          增加项目结构
+                          <a
+                            class="header-anchor"
+                            href="#增加项目结构"
+                            aria-label='Permalink to "增加项目结构"'
+                            >​</a
+                          >
+                        </h3>
+                        <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                          <button title="Copy Code" class="copy"></button
+                          ><span class="lang">bash</span>
+                          <pre
+                            class="shiki shiki-themes github-light github-dark vp-code"
+                            tabindex="0"
+                          ><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">vite-</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> package.json</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> vite.config.ts</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">            # Electron 主进程代码</span></span>
@@ -53,7 +595,67 @@
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> src/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">               # 渲染进程代码（Vue/React）</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   ├──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> main.tsx/.vue</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">  # 入口文件</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">│</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">   └──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> App.vue/.tsx</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">└──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> dist/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">             # 构建输出目录</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="配置文件" tabindex="-1">配置文件 <a class="header-anchor" href="#配置文件" aria-label="Permalink to &quot;配置文件&quot;">​</a></h3><p><code>electron</code> 文件夹下面的配置文件，Electron 主进程核心代码。<code>renderer.ts</code> 结合 <code>index.html</code> 可以写入版本信息，以便于开发过程中查看。</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-gXv6X" id="tab-5QFjRdr" checked><label data-title="main.ts" for="tab-5QFjRdr">main.ts</label><input type="radio" name="group-gXv6X" id="tab-lwV1LZS"><label data-title="preload.ts" for="tab-lwV1LZS">preload.ts</label><input type="radio" name="group-gXv6X" id="tab-Az04Zzy"><label data-title="renderer.ts" for="tab-Az04Zzy">renderer.ts</label><input type="radio" name="group-gXv6X" id="tab-vPCMhUD"><label data-title="menus.ts" for="tab-vPCMhUD">menus.ts</label></div><div class="blocks"><div class="language-ts vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">/**</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">└──</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> dist/</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">             # 构建输出目录</span></span></code></pre>
+                          <div class="line-numbers-wrapper" aria-hidden="true">
+                            <span class="line-number">1</span><br /><span class="line-number"
+                              >2</span
+                            ><br /><span class="line-number">3</span><br /><span class="line-number"
+                              >4</span
+                            ><br /><span class="line-number">5</span><br /><span class="line-number"
+                              >6</span
+                            ><br /><span class="line-number">7</span><br /><span class="line-number"
+                              >8</span
+                            ><br /><span class="line-number">9</span><br /><span class="line-number"
+                              >10</span
+                            ><br /><span class="line-number">11</span><br /><span
+                              class="line-number"
+                              >12</span
+                            ><br />
+                          </div>
+                        </div>
+                        <h3 id="配置文件" tabindex="-1">
+                          配置文件
+                          <a
+                            class="header-anchor"
+                            href="#配置文件"
+                            aria-label='Permalink to "配置文件"'
+                            >​</a
+                          >
+                        </h3>
+                        <p>
+                          <code>electron</code> 文件夹下面的配置文件，Electron 主进程核心代码。<code
+                            >renderer.ts</code
+                          >
+                          结合 <code>index.html</code> 可以写入版本信息，以便于开发过程中查看。
+                        </p>
+                        <div class="vp-code-group vp-adaptive-theme">
+                          <div class="tabs">
+                            <input type="radio" name="group-Hehbj" id="tab-OoqoGCx" checked /><label
+                              data-title="main.ts"
+                              for="tab-OoqoGCx"
+                              >main.ts</label
+                            ><input type="radio" name="group-Hehbj" id="tab-WEaEAO8" /><label
+                              data-title="preload.ts"
+                              for="tab-WEaEAO8"
+                              >preload.ts</label
+                            ><input type="radio" name="group-Hehbj" id="tab-XZHxvlF" /><label
+                              data-title="renderer.ts"
+                              for="tab-XZHxvlF"
+                              >renderer.ts</label
+                            ><input type="radio" name="group-Hehbj" id="tab-Dh3Cb5d" /><label
+                              data-title="menus.ts"
+                              for="tab-Dh3Cb5d"
+                              >menus.ts</label
+                            >
+                          </div>
+                          <div class="blocks">
+                            <div class="language-ts vp-adaptive-theme active line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">ts</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">/**</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"> * 主进程</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"> *</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"> * 以帕斯卡命名法 (PascalCase) 命名可实例化的类，以驼峰命名法 (camelCase) 命名不可实例化的函数、变量等</span></span>
@@ -148,7 +750,161 @@
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"> * */</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">app.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">on</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;window-all-closed&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, () </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">isMac) app.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">quit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">();</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br></div></div><div class="language-ts vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">contextBridge</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">ipcRenderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> require</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;electron&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br /><span class="line-number">17</span><br /><span
+                                  class="line-number"
+                                  >18</span
+                                ><br /><span class="line-number">19</span><br /><span
+                                  class="line-number"
+                                  >20</span
+                                ><br /><span class="line-number">21</span><br /><span
+                                  class="line-number"
+                                  >22</span
+                                ><br /><span class="line-number">23</span><br /><span
+                                  class="line-number"
+                                  >24</span
+                                ><br /><span class="line-number">25</span><br /><span
+                                  class="line-number"
+                                  >26</span
+                                ><br /><span class="line-number">27</span><br /><span
+                                  class="line-number"
+                                  >28</span
+                                ><br /><span class="line-number">29</span><br /><span
+                                  class="line-number"
+                                  >30</span
+                                ><br /><span class="line-number">31</span><br /><span
+                                  class="line-number"
+                                  >32</span
+                                ><br /><span class="line-number">33</span><br /><span
+                                  class="line-number"
+                                  >34</span
+                                ><br /><span class="line-number">35</span><br /><span
+                                  class="line-number"
+                                  >36</span
+                                ><br /><span class="line-number">37</span><br /><span
+                                  class="line-number"
+                                  >38</span
+                                ><br /><span class="line-number">39</span><br /><span
+                                  class="line-number"
+                                  >40</span
+                                ><br /><span class="line-number">41</span><br /><span
+                                  class="line-number"
+                                  >42</span
+                                ><br /><span class="line-number">43</span><br /><span
+                                  class="line-number"
+                                  >44</span
+                                ><br /><span class="line-number">45</span><br /><span
+                                  class="line-number"
+                                  >46</span
+                                ><br /><span class="line-number">47</span><br /><span
+                                  class="line-number"
+                                  >48</span
+                                ><br /><span class="line-number">49</span><br /><span
+                                  class="line-number"
+                                  >50</span
+                                ><br /><span class="line-number">51</span><br /><span
+                                  class="line-number"
+                                  >52</span
+                                ><br /><span class="line-number">53</span><br /><span
+                                  class="line-number"
+                                  >54</span
+                                ><br /><span class="line-number">55</span><br /><span
+                                  class="line-number"
+                                  >56</span
+                                ><br /><span class="line-number">57</span><br /><span
+                                  class="line-number"
+                                  >58</span
+                                ><br /><span class="line-number">59</span><br /><span
+                                  class="line-number"
+                                  >60</span
+                                ><br /><span class="line-number">61</span><br /><span
+                                  class="line-number"
+                                  >62</span
+                                ><br /><span class="line-number">63</span><br /><span
+                                  class="line-number"
+                                  >64</span
+                                ><br /><span class="line-number">65</span><br /><span
+                                  class="line-number"
+                                  >66</span
+                                ><br /><span class="line-number">67</span><br /><span
+                                  class="line-number"
+                                  >68</span
+                                ><br /><span class="line-number">69</span><br /><span
+                                  class="line-number"
+                                  >70</span
+                                ><br /><span class="line-number">71</span><br /><span
+                                  class="line-number"
+                                  >72</span
+                                ><br /><span class="line-number">73</span><br /><span
+                                  class="line-number"
+                                  >74</span
+                                ><br /><span class="line-number">75</span><br /><span
+                                  class="line-number"
+                                  >76</span
+                                ><br /><span class="line-number">77</span><br /><span
+                                  class="line-number"
+                                  >78</span
+                                ><br /><span class="line-number">79</span><br /><span
+                                  class="line-number"
+                                  >80</span
+                                ><br /><span class="line-number">81</span><br /><span
+                                  class="line-number"
+                                  >82</span
+                                ><br /><span class="line-number">83</span><br /><span
+                                  class="line-number"
+                                  >84</span
+                                ><br /><span class="line-number">85</span><br /><span
+                                  class="line-number"
+                                  >86</span
+                                ><br /><span class="line-number">87</span><br /><span
+                                  class="line-number"
+                                  >88</span
+                                ><br /><span class="line-number">89</span><br /><span
+                                  class="line-number"
+                                  >90</span
+                                ><br /><span class="line-number">91</span><br /><span
+                                  class="line-number"
+                                  >92</span
+                                ><br /><span class="line-number">93</span><br /><span
+                                  class="line-number"
+                                  >94</span
+                                ><br /><span class="line-number">95</span><br /><span
+                                  class="line-number"
+                                  >96</span
+                                ><br />
+                              </div>
+                            </div>
+                            <div class="language-ts vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">ts</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> { </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">contextBridge</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">ipcRenderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> require</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;electron&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">/**</span></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"> * 预加载渲染进程</span></span>
@@ -178,7 +934,62 @@
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    }</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> Promise</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">reject</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> Error</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;Unauthorized IPC channel&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">));</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><div class="language-ts vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// 判断是在electron环境，还是普通浏览器环境</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">});</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br /><span class="line-number">17</span><br /><span
+                                  class="line-number"
+                                  >18</span
+                                ><br /><span class="line-number">19</span><br /><span
+                                  class="line-number"
+                                  >20</span
+                                ><br /><span class="line-number">21</span><br /><span
+                                  class="line-number"
+                                  >22</span
+                                ><br /><span class="line-number">23</span><br /><span
+                                  class="line-number"
+                                  >24</span
+                                ><br /><span class="line-number">25</span><br /><span
+                                  class="line-number"
+                                  >26</span
+                                ><br /><span class="line-number">27</span><br /><span
+                                  class="line-number"
+                                  >28</span
+                                ><br /><span class="line-number">29</span><br /><span
+                                  class="line-number"
+                                  >30</span
+                                ><br /><span class="line-number">31</span><br />
+                              </div>
+                            </div>
+                            <div class="language-ts vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">ts</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// 判断是在electron环境，还是普通浏览器环境</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> isElectron</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">() {</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">typeof</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> navigator </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">!==</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;undefined&#39;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> &amp;&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> navigator.userAgent) {</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> navigator.userAgent.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">toLowerCase</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">().</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">indexOf</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;electron&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">&gt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
@@ -198,7 +1009,47 @@
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// 页面加载时显示版本信息</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">window.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">addEventListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;DOMContentLoaded&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, displayVersions);</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><div class="language-ts vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> isMac</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> process.platform </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;darwin&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">window.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">addEventListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;DOMContentLoaded&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, displayVersions);</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br /><span class="line-number">17</span><br /><span
+                                  class="line-number"
+                                  >18</span
+                                ><br /><span class="line-number">19</span><br /><span
+                                  class="line-number"
+                                  >20</span
+                                ><br /><span class="line-number">21</span><br />
+                              </div>
+                            </div>
+                            <div class="language-ts vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">ts</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> isMac</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> process.platform </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">===</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;darwin&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> createAppTemplate</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">app</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">shell</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">Menu</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> {</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  let</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> currentTheme </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;light&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>
 <span class="line"></span>
@@ -417,7 +1268,375 @@
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  });</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  console.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;上下文菜单创建成功 🎉&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">);</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> template;</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br></div></div></div></div><p><code>vite</code> 项目其他的配置文件，<code>package.json</code> 新增 electron 操作命令；<code>index.html</code> 根据环境动态改变标题，并增加版本信息；新增环境变量文件。</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-uFeX4" id="tab-eindRJq" checked><label data-title="package.json" for="tab-eindRJq">package.json</label><input type="radio" name="group-uFeX4" id="tab-hY1VBPl"><label data-title="index.html" for="tab-hY1VBPl">index.html</label><input type="radio" name="group-uFeX4" id="tab-ig56TZq"><label data-title=".env" for="tab-ig56TZq">.env</label><input type="radio" name="group-uFeX4" id="tab-4LHAK7U"><label data-title=".env.production" for="tab-4LHAK7U">.env.production</label></div><div class="blocks"><div class="language-json vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes github-light github-dark has-focused-lines vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">};</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br /><span class="line-number">17</span><br /><span
+                                  class="line-number"
+                                  >18</span
+                                ><br /><span class="line-number">19</span><br /><span
+                                  class="line-number"
+                                  >20</span
+                                ><br /><span class="line-number">21</span><br /><span
+                                  class="line-number"
+                                  >22</span
+                                ><br /><span class="line-number">23</span><br /><span
+                                  class="line-number"
+                                  >24</span
+                                ><br /><span class="line-number">25</span><br /><span
+                                  class="line-number"
+                                  >26</span
+                                ><br /><span class="line-number">27</span><br /><span
+                                  class="line-number"
+                                  >28</span
+                                ><br /><span class="line-number">29</span><br /><span
+                                  class="line-number"
+                                  >30</span
+                                ><br /><span class="line-number">31</span><br /><span
+                                  class="line-number"
+                                  >32</span
+                                ><br /><span class="line-number">33</span><br /><span
+                                  class="line-number"
+                                  >34</span
+                                ><br /><span class="line-number">35</span><br /><span
+                                  class="line-number"
+                                  >36</span
+                                ><br /><span class="line-number">37</span><br /><span
+                                  class="line-number"
+                                  >38</span
+                                ><br /><span class="line-number">39</span><br /><span
+                                  class="line-number"
+                                  >40</span
+                                ><br /><span class="line-number">41</span><br /><span
+                                  class="line-number"
+                                  >42</span
+                                ><br /><span class="line-number">43</span><br /><span
+                                  class="line-number"
+                                  >44</span
+                                ><br /><span class="line-number">45</span><br /><span
+                                  class="line-number"
+                                  >46</span
+                                ><br /><span class="line-number">47</span><br /><span
+                                  class="line-number"
+                                  >48</span
+                                ><br /><span class="line-number">49</span><br /><span
+                                  class="line-number"
+                                  >50</span
+                                ><br /><span class="line-number">51</span><br /><span
+                                  class="line-number"
+                                  >52</span
+                                ><br /><span class="line-number">53</span><br /><span
+                                  class="line-number"
+                                  >54</span
+                                ><br /><span class="line-number">55</span><br /><span
+                                  class="line-number"
+                                  >56</span
+                                ><br /><span class="line-number">57</span><br /><span
+                                  class="line-number"
+                                  >58</span
+                                ><br /><span class="line-number">59</span><br /><span
+                                  class="line-number"
+                                  >60</span
+                                ><br /><span class="line-number">61</span><br /><span
+                                  class="line-number"
+                                  >62</span
+                                ><br /><span class="line-number">63</span><br /><span
+                                  class="line-number"
+                                  >64</span
+                                ><br /><span class="line-number">65</span><br /><span
+                                  class="line-number"
+                                  >66</span
+                                ><br /><span class="line-number">67</span><br /><span
+                                  class="line-number"
+                                  >68</span
+                                ><br /><span class="line-number">69</span><br /><span
+                                  class="line-number"
+                                  >70</span
+                                ><br /><span class="line-number">71</span><br /><span
+                                  class="line-number"
+                                  >72</span
+                                ><br /><span class="line-number">73</span><br /><span
+                                  class="line-number"
+                                  >74</span
+                                ><br /><span class="line-number">75</span><br /><span
+                                  class="line-number"
+                                  >76</span
+                                ><br /><span class="line-number">77</span><br /><span
+                                  class="line-number"
+                                  >78</span
+                                ><br /><span class="line-number">79</span><br /><span
+                                  class="line-number"
+                                  >80</span
+                                ><br /><span class="line-number">81</span><br /><span
+                                  class="line-number"
+                                  >82</span
+                                ><br /><span class="line-number">83</span><br /><span
+                                  class="line-number"
+                                  >84</span
+                                ><br /><span class="line-number">85</span><br /><span
+                                  class="line-number"
+                                  >86</span
+                                ><br /><span class="line-number">87</span><br /><span
+                                  class="line-number"
+                                  >88</span
+                                ><br /><span class="line-number">89</span><br /><span
+                                  class="line-number"
+                                  >90</span
+                                ><br /><span class="line-number">91</span><br /><span
+                                  class="line-number"
+                                  >92</span
+                                ><br /><span class="line-number">93</span><br /><span
+                                  class="line-number"
+                                  >94</span
+                                ><br /><span class="line-number">95</span><br /><span
+                                  class="line-number"
+                                  >96</span
+                                ><br /><span class="line-number">97</span><br /><span
+                                  class="line-number"
+                                  >98</span
+                                ><br /><span class="line-number">99</span><br /><span
+                                  class="line-number"
+                                  >100</span
+                                ><br /><span class="line-number">101</span><br /><span
+                                  class="line-number"
+                                  >102</span
+                                ><br /><span class="line-number">103</span><br /><span
+                                  class="line-number"
+                                  >104</span
+                                ><br /><span class="line-number">105</span><br /><span
+                                  class="line-number"
+                                  >106</span
+                                ><br /><span class="line-number">107</span><br /><span
+                                  class="line-number"
+                                  >108</span
+                                ><br /><span class="line-number">109</span><br /><span
+                                  class="line-number"
+                                  >110</span
+                                ><br /><span class="line-number">111</span><br /><span
+                                  class="line-number"
+                                  >112</span
+                                ><br /><span class="line-number">113</span><br /><span
+                                  class="line-number"
+                                  >114</span
+                                ><br /><span class="line-number">115</span><br /><span
+                                  class="line-number"
+                                  >116</span
+                                ><br /><span class="line-number">117</span><br /><span
+                                  class="line-number"
+                                  >118</span
+                                ><br /><span class="line-number">119</span><br /><span
+                                  class="line-number"
+                                  >120</span
+                                ><br /><span class="line-number">121</span><br /><span
+                                  class="line-number"
+                                  >122</span
+                                ><br /><span class="line-number">123</span><br /><span
+                                  class="line-number"
+                                  >124</span
+                                ><br /><span class="line-number">125</span><br /><span
+                                  class="line-number"
+                                  >126</span
+                                ><br /><span class="line-number">127</span><br /><span
+                                  class="line-number"
+                                  >128</span
+                                ><br /><span class="line-number">129</span><br /><span
+                                  class="line-number"
+                                  >130</span
+                                ><br /><span class="line-number">131</span><br /><span
+                                  class="line-number"
+                                  >132</span
+                                ><br /><span class="line-number">133</span><br /><span
+                                  class="line-number"
+                                  >134</span
+                                ><br /><span class="line-number">135</span><br /><span
+                                  class="line-number"
+                                  >136</span
+                                ><br /><span class="line-number">137</span><br /><span
+                                  class="line-number"
+                                  >138</span
+                                ><br /><span class="line-number">139</span><br /><span
+                                  class="line-number"
+                                  >140</span
+                                ><br /><span class="line-number">141</span><br /><span
+                                  class="line-number"
+                                  >142</span
+                                ><br /><span class="line-number">143</span><br /><span
+                                  class="line-number"
+                                  >144</span
+                                ><br /><span class="line-number">145</span><br /><span
+                                  class="line-number"
+                                  >146</span
+                                ><br /><span class="line-number">147</span><br /><span
+                                  class="line-number"
+                                  >148</span
+                                ><br /><span class="line-number">149</span><br /><span
+                                  class="line-number"
+                                  >150</span
+                                ><br /><span class="line-number">151</span><br /><span
+                                  class="line-number"
+                                  >152</span
+                                ><br /><span class="line-number">153</span><br /><span
+                                  class="line-number"
+                                  >154</span
+                                ><br /><span class="line-number">155</span><br /><span
+                                  class="line-number"
+                                  >156</span
+                                ><br /><span class="line-number">157</span><br /><span
+                                  class="line-number"
+                                  >158</span
+                                ><br /><span class="line-number">159</span><br /><span
+                                  class="line-number"
+                                  >160</span
+                                ><br /><span class="line-number">161</span><br /><span
+                                  class="line-number"
+                                  >162</span
+                                ><br /><span class="line-number">163</span><br /><span
+                                  class="line-number"
+                                  >164</span
+                                ><br /><span class="line-number">165</span><br /><span
+                                  class="line-number"
+                                  >166</span
+                                ><br /><span class="line-number">167</span><br /><span
+                                  class="line-number"
+                                  >168</span
+                                ><br /><span class="line-number">169</span><br /><span
+                                  class="line-number"
+                                  >170</span
+                                ><br /><span class="line-number">171</span><br /><span
+                                  class="line-number"
+                                  >172</span
+                                ><br /><span class="line-number">173</span><br /><span
+                                  class="line-number"
+                                  >174</span
+                                ><br /><span class="line-number">175</span><br /><span
+                                  class="line-number"
+                                  >176</span
+                                ><br /><span class="line-number">177</span><br /><span
+                                  class="line-number"
+                                  >178</span
+                                ><br /><span class="line-number">179</span><br /><span
+                                  class="line-number"
+                                  >180</span
+                                ><br /><span class="line-number">181</span><br /><span
+                                  class="line-number"
+                                  >182</span
+                                ><br /><span class="line-number">183</span><br /><span
+                                  class="line-number"
+                                  >184</span
+                                ><br /><span class="line-number">185</span><br /><span
+                                  class="line-number"
+                                  >186</span
+                                ><br /><span class="line-number">187</span><br /><span
+                                  class="line-number"
+                                  >188</span
+                                ><br /><span class="line-number">189</span><br /><span
+                                  class="line-number"
+                                  >190</span
+                                ><br /><span class="line-number">191</span><br /><span
+                                  class="line-number"
+                                  >192</span
+                                ><br /><span class="line-number">193</span><br /><span
+                                  class="line-number"
+                                  >194</span
+                                ><br /><span class="line-number">195</span><br /><span
+                                  class="line-number"
+                                  >196</span
+                                ><br /><span class="line-number">197</span><br /><span
+                                  class="line-number"
+                                  >198</span
+                                ><br /><span class="line-number">199</span><br /><span
+                                  class="line-number"
+                                  >200</span
+                                ><br /><span class="line-number">201</span><br /><span
+                                  class="line-number"
+                                  >202</span
+                                ><br /><span class="line-number">203</span><br /><span
+                                  class="line-number"
+                                  >204</span
+                                ><br /><span class="line-number">205</span><br /><span
+                                  class="line-number"
+                                  >206</span
+                                ><br /><span class="line-number">207</span><br /><span
+                                  class="line-number"
+                                  >208</span
+                                ><br /><span class="line-number">209</span><br /><span
+                                  class="line-number"
+                                  >210</span
+                                ><br /><span class="line-number">211</span><br /><span
+                                  class="line-number"
+                                  >212</span
+                                ><br /><span class="line-number">213</span><br /><span
+                                  class="line-number"
+                                  >214</span
+                                ><br /><span class="line-number">215</span><br /><span
+                                  class="line-number"
+                                  >216</span
+                                ><br /><span class="line-number">217</span><br /><span
+                                  class="line-number"
+                                  >218</span
+                                ><br /><span class="line-number">219</span><br /><span
+                                  class="line-number"
+                                  >220</span
+                                ><br />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p>
+                          <code>vite</code> 项目其他的配置文件，<code>package.json</code> 新增
+                          electron 操作命令；<code>index.html</code>
+                          根据环境动态改变标题，并增加版本信息；新增环境变量文件。
+                        </p>
+                        <div class="vp-code-group vp-adaptive-theme">
+                          <div class="tabs">
+                            <input type="radio" name="group-XSxQN" id="tab-lPL8oiA" checked /><label
+                              data-title="package.json"
+                              for="tab-lPL8oiA"
+                              >package.json</label
+                            ><input type="radio" name="group-XSxQN" id="tab-r1WdOqC" /><label
+                              data-title="index.html"
+                              for="tab-r1WdOqC"
+                              >index.html</label
+                            ><input type="radio" name="group-XSxQN" id="tab-IGwpUYk" /><label
+                              data-title=".env"
+                              for="tab-IGwpUYk"
+                              >.env</label
+                            ><input type="radio" name="group-XSxQN" id="tab-cHsyUXv" /><label
+                              data-title=".env.production"
+                              for="tab-cHsyUXv"
+                              >.env.production</label
+                            >
+                          </div>
+                          <div class="blocks">
+                            <div class="language-json vp-adaptive-theme active line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">json</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark has-focused-lines vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">{</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  &quot;name&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;vite-electron&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  &quot;private&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">  &quot;version&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;0.0.0&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
@@ -451,7 +1670,68 @@
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    &quot;vue-tsc&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;^3.1.4&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">    &quot;wait-on&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;^9.0.3&quot;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  }</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><div class="language-html vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark has-focused-lines vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;!</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">doctype</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">}</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br /><span
+                                  class="line-number"
+                                  >16</span
+                                ><br /><span class="line-number">17</span><br /><span
+                                  class="line-number"
+                                  >18</span
+                                ><br /><span class="line-number">19</span><br /><span
+                                  class="line-number"
+                                  >20</span
+                                ><br /><span class="line-number">21</span><br /><span
+                                  class="line-number"
+                                  >22</span
+                                ><br /><span class="line-number">23</span><br /><span
+                                  class="line-number"
+                                  >24</span
+                                ><br /><span class="line-number">25</span><br /><span
+                                  class="line-number"
+                                  >26</span
+                                ><br /><span class="line-number">27</span><br /><span
+                                  class="line-number"
+                                  >28</span
+                                ><br /><span class="line-number">29</span><br /><span
+                                  class="line-number"
+                                  >30</span
+                                ><br /><span class="line-number">31</span><br /><span
+                                  class="line-number"
+                                  >32</span
+                                ><br /><span class="line-number">33</span><br /><span
+                                  class="line-number"
+                                  >34</span
+                                ><br /><span class="line-number">35</span><br />
+                              </div>
+                            </div>
+                            <div class="language-html vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">html</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark has-focused-lines vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;!</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">doctype</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">html</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;en&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">head</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">meta</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> charset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;UTF-8&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> /&gt;</span></span>
@@ -465,8 +1745,114 @@
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;module&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/src/main.ts&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;module&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;/electron/renderer.ts&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line has-focus"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  &lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">body</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">VITE_APP_TITLE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">vite-electron-dev</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-bash vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">VITE_APP_TITLE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">vite-electron</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div></div></div><h2 id="electron-打包" tabindex="-1">Electron 打包 <a class="header-anchor" href="#electron-打包" aria-label="Permalink to &quot;Electron 打包&quot;">​</a></h2><p>？？？</p></div></div></main><footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d><!--[--><!--]--><div class="edit-info" data-v-e257564d><!----><div class="last-updated" data-v-e257564d><p class="VPLastUpdated" data-v-e257564d data-v-e98dd255>Last updated: <time datetime="2026-01-10T15:00:51.000Z" data-v-e98dd255></time></p></div></div><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><!----></div><div class="pager" data-v-e257564d><a class="VPLink link pager-link next" href="/docs/applet-uni.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>下一篇</span><span class="title" data-v-e257564d>【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--]--></div></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"a-example.md\":\"DsSPa9lL\",\"applet-taro.md\":\"CrbLgkhu\",\"applet-uni.md\":\"Ct-QHqR4\",\"config-gitsubmit.md\":\"6w1UhFvS\",\"config-nginx.md\":\"BaBcgmVh\",\"gui-electron.md\":\"D3ff0DT2\",\"hosting-github.md\":\"BclWdEu5\",\"index.md\":\"BO29apd1\",\"micro-qiankun.md\":\"ye8wvPNi\",\"screen-adapter.md\":\"YrOmCRmu\",\"svg-weather.md\":\"D2pnKJqh\",\"vitepress-web.md\":\"DDRd7F-p\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"zh-CN\",\"dir\":\"ltr\",\"title\":\"Vitepress Project\",\"description\":\"存储博客文章站点\",\"base\":\"/docs/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"outline\":{\"level\":[2,6],\"label\":\"页面导航\"},\"docFooter\":{\"prev\":\"上一篇\",\"next\":\"下一篇\"},\"nav\":[{\"text\":\"Home\",\"link\":\"/\"},{\"text\":\"Entrance\",\"link\":\"/vitepress-web\"}],\"sidebar\":[{\"text\":\"忘忧博客\",\"items\":[{\"text\":\"基于 Vite + Electron + Vue-ts 的桌面应用模版\",\"link\":\"/gui-electron\"},{\"text\":\"【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序\",\"link\":\"/applet-uni\"},{\"text\":\"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布\",\"link\":\"/applet-taro\"},{\"text\":\"谈一谈可视化大屏的适配方案\",\"link\":\"/screen-adapter\"},{\"text\":\"基于 VitePress 把 Markdown 编写的内容构建成静态页面并利用 iframe 集成到 Web 页面的实践\",\"link\":\"/vitepress-web\"},{\"text\":\"【交互式天气仪表盘】项目带你快速了解 SVG 知识\",\"link\":\"/svg-weather\"},{\"text\":\"如何使用GitHub Pages托管博客\",\"link\":\"/hosting-github\"},{\"text\":\"前端项目配置Git提交规范\",\"link\":\"/config-gitsubmit\"},{\"text\":\"前端与Nginx的不解之缘——Nginx配置和Code部署\",\"link\":\"/config-nginx\"},{\"text\":\"qiankun微前端架构使用hash路由从0到1的开发\",\"link\":\"/micro-qiankun\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/wynectar\"}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
-    
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br /><span class="line-number"
+                                  >2</span
+                                ><br /><span class="line-number">3</span><br /><span
+                                  class="line-number"
+                                  >4</span
+                                ><br /><span class="line-number">5</span><br /><span
+                                  class="line-number"
+                                  >6</span
+                                ><br /><span class="line-number">7</span><br /><span
+                                  class="line-number"
+                                  >8</span
+                                ><br /><span class="line-number">9</span><br /><span
+                                  class="line-number"
+                                  >10</span
+                                ><br /><span class="line-number">11</span><br /><span
+                                  class="line-number"
+                                  >12</span
+                                ><br /><span class="line-number">13</span><br /><span
+                                  class="line-number"
+                                  >14</span
+                                ><br /><span class="line-number">15</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">VITE_APP_TITLE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">vite-electron-dev</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                            <div class="language-bash vp-adaptive-theme line-numbers-mode">
+                              <button title="Copy Code" class="copy"></button
+                              ><span class="lang">bash</span>
+                              <pre
+                                class="shiki shiki-themes github-light github-dark vp-code"
+                                tabindex="0"
+                              ><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">VITE_APP_TITLE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">vite-electron</span></span></code></pre>
+                              <div class="line-numbers-wrapper" aria-hidden="true">
+                                <span class="line-number">1</span><br />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <h2 id="electron-打包" tabindex="-1">
+                          Electron 打包
+                          <a
+                            class="header-anchor"
+                            href="#electron-打包"
+                            aria-label='Permalink to "Electron 打包"'
+                            >​</a
+                          >
+                        </h2>
+                        <p>？？？</p>
+                      </div>
+                    </div>
+                  </main>
+                  <footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d>
+                    <!--[--><!--]-->
+                    <div class="edit-info" data-v-e257564d>
+                      <!---->
+                      <div class="last-updated" data-v-e257564d>
+                        <p class="VPLastUpdated" data-v-e257564d data-v-e98dd255>
+                          Last updated:
+                          <time datetime="2026-01-10T15:00:51.000Z" data-v-e98dd255></time>
+                        </p>
+                      </div>
+                    </div>
+                    <nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d>
+                      <span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d
+                        >Pager</span
+                      >
+                      <div class="pager" data-v-e257564d><!----></div>
+                      <div class="pager" data-v-e257564d>
+                        <a
+                          class="VPLink link pager-link next"
+                          href="/docs/applet-uni.html"
+                          data-v-e257564d
+                          ><!--[--><span class="desc" data-v-e257564d>下一篇</span
+                          ><span class="title" data-v-e257564d
+                            >【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序</span
+                          ><!--]--></a
+                        >
+                      </div>
+                    </nav>
+                  </footer>
+                  <!--[--><!--]-->
+                </div>
+              </div>
+            </div>
+            <!--[--><!--]-->
+          </div>
+        </div>
+        <!----><!--[--><!--]-->
+      </div>
+    </div>
+    <script>
+      window.__VP_HASH_MAP__ = JSON.parse(
+        '{"a-example.md":"DEgzOdHh","applet-taro.md":"C-7xta_9","applet-uni.md":"Ct-QHqR4","config-gitsubmit.md":"6w1UhFvS","config-nginx.md":"BaBcgmVh","gui-electron.md":"Dlvq1xbt","hosting-github.md":"BclWdEu5","index.md":"BO29apd1","micro-qiankun.md":"ye8wvPNi","screen-adapter.md":"BwiAXXTH","svg-weather.md":"DbojSMiM","vitepress-web.md":"2z9Us1QZ"}'
+      );
+      window.__VP_SITE_DATA__ = JSON.parse(
+        '{"lang":"zh-CN","dir":"ltr","title":"Vitepress Project","description":"存储博客文章站点","base":"/docs/","head":[],"router":{"prefetchLinks":true},"appearance":true,"themeConfig":{"outline":{"level":[2,6],"label":"页面导航"},"docFooter":{"prev":"上一篇","next":"下一篇"},"nav":[{"text":"Home","link":"/"},{"text":"Entrance","link":"/vitepress-web"}],"sidebar":[{"text":"忘忧博客","items":[{"text":"基于 Vite + Electron + Vue-ts 的桌面应用模版","link":"/gui-electron"},{"text":"【寓教于乐灯谜】基于 uni-app + vue3 + pinia 的微信小程序","link":"/applet-uni"},{"text":"【今日幸运色】项目带你快速完成 Taro 小程序开发和微信小程序发布","link":"/applet-taro"},{"text":"谈一谈可视化大屏的适配方案","link":"/screen-adapter"},{"text":"基于 VitePress 把 Markdown 编写的内容构建成静态页面并利用 iframe 集成到 Web 页面的实践","link":"/vitepress-web"},{"text":"【交互式天气仪表盘】项目带你快速了解 SVG 知识","link":"/svg-weather"},{"text":"如何使用GitHub Pages托管博客","link":"/hosting-github"},{"text":"前端项目配置Git提交规范","link":"/config-gitsubmit"},{"text":"前端与Nginx的不解之缘——Nginx配置和Code部署","link":"/config-nginx"},{"text":"qiankun微前端架构使用hash路由从0到1的开发","link":"/micro-qiankun"}]}],"socialLinks":[{"icon":"github","link":"https://github.com/wynectar"}]},"locales":{},"scrollOffset":134,"cleanUrls":false}'
+      );
+    </script>
   </body>
 </html>
