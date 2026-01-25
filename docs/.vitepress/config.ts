@@ -8,6 +8,7 @@ export default defineConfig({
   base: '/docs/', // 🔥基于主路径的站点访问路径
   outDir: '../public/docs', // 🔥项目的构建输出位置，相对于 Vitepress 项目的根目录
   lastUpdated: true, // 🔥启用 Git 获取每个页面的最后更新时间戳
+  ssr: false,
   markdown: {
     // 🔥markdown 扩展
     lineNumbers: true, // 代码块启用行号

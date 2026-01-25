@@ -4,17 +4,17 @@ import { useNBRouter } from "@/utils/router";
 import { useThemeStore } from '@/stores/theme'
 
 // 主题模式控制
-const iframe = ref()
+const iframeRef = ref()
 const theme = useThemeStore()
 const show = ref(false)
 const stop = watch(() => theme.isDark, () => {
   changeTheme()
 })
 function changeTheme() {
-  const html = iframe.value?.contentDocument?.querySelector('html')
+  const html = iframeRef.value?.contentDocument?.querySelector('html')
   if (!html) return
   if (theme.isDark) {
-    iframe.value?.contentDocument?.querySelector('html').classList.add('dark')
+    iframeRef.value?.contentDocument?.querySelector('html').classList.add('dark')
   } else {
     html.classList.remove('dark')
   }
@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
 // 根据路由参数获取文章文件名
 const { route } = useNBRouter();
 const id = route.params.id
-const url = `/docs/${id}.html`
+const url = `/docs/${id}.html?v=${Date.now()}`
 
 /**
  * @checking 正在校验中。。。
@@ -78,7 +78,7 @@ onMounted(() => {
         </template>
       </n-result>
       <iframe v-show="show" :src="url" @load="onLoad" @error="onError" width="100%" height="100%" frameborder="0"
-        ref="iframe"></iframe>
+        ref="iframeRef"></iframe>
     </div>
     <!-- 页面不存在 -->
     <n-result status="403" title="页面不存在" v-else>
