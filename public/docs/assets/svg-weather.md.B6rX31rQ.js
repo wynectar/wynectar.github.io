@@ -5,7 +5,7 @@ import {
   c as r,
   o as h,
   j as s,
-  e as A,
+  e as x,
   t as y,
   r as D,
   b,
@@ -19,11 +19,11 @@ import {
 } from './chunks/framework.DjAKN8N1.js';
 const V = { class: 'gauge-box' },
   G = { class: 'gauge-title' },
-  T = { width: '200', height: '150', viewBox: '0 0 200 150' },
-  M = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
-  L = ['fill'],
-  N = ['transform'],
-  P = { key: 0, class: 'gauge-value' },
+  M = { width: '200', height: '150', viewBox: '0 0 200 150' },
+  T = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
+  P = ['fill'],
+  L = ['transform'],
+  N = { key: 0, class: 'gauge-value' },
   $ = {
     __name: 'GaugeBox',
     props: {
@@ -43,7 +43,7 @@ const V = { class: 'gauge-box' },
         r('div', V, [
           s('div', G, y(a.title), 1),
           (h(),
-          r('svg', T, [
+          r('svg', M, [
             l[1] ||
               (l[1] = s(
                 'path',
@@ -71,7 +71,7 @@ const V = { class: 'gauge-box' },
               },
               null,
               8,
-              M
+              T
             ),
             D(t.$slots, 'default', {}, void 0, !0),
             s(
@@ -88,15 +88,15 @@ const V = { class: 'gauge-box' },
                   },
                   null,
                   8,
-                  N
+                  L
                 ),
                 l[0] || (l[0] = s('circle', { cx: '100', cy: '110', r: '4' }, null, -1))
               ],
               8,
-              L
+              P
             )
           ])),
-          a.unit ? (h(), r('div', P, y(a.value) + ' ' + y(a.unit), 1)) : A('', !0)
+          a.unit ? (h(), r('div', N, y(a.value) + ' ' + y(a.unit), 1)) : x('', !0)
         ])
       );
     }
@@ -106,7 +106,7 @@ const V = { class: 'gauge-box' },
   I = ['y', 'height'],
   q = '#ff7675',
   m = 40,
-  z = {
+  j = {
     __name: 'GaugeTemperature',
     props: { value: { type: Number, default: 28 } },
     setup(a) {
@@ -170,9 +170,9 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  v = F(z, [['__scopeId', 'data-v-e22044d7']]),
-  W = '#74b9ff',
-  j = 100,
+  v = F(j, [['__scopeId', 'data-v-e22044d7']]),
+  z = '#74b9ff',
+  H = 100,
   f = {
     __name: 'GaugeHumidity',
     props: { value: { type: Number, default: 40 } },
@@ -181,7 +181,7 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '湿度计', value: a.value, maxValue: j, color: W, unit: '%' },
+          { title: '湿度计', value: a.value, maxValue: H, color: z, unit: '%' },
           {
             default: C(
               () =>
@@ -243,11 +243,11 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  H = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
-  Q = { transform: 'translate(175, 40)' },
-  U = '#a29bfe',
-  R = 30,
-  K = {
+  R = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
+  W = { transform: 'translate(175, 40)' },
+  J = '#a29bfe',
+  Y = 30,
+  U = {
     __name: 'GaugeWind',
     props: { value: { type: Number, default: 8 } },
     setup(a) {
@@ -255,10 +255,10 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '风速计', value: a.value, maxValue: R, color: U, unit: 'km/h' },
+          { title: '风速计', value: a.value, maxValue: Y, color: J, unit: 'km/h' },
           {
             default: C(() => [
-              s('g', H, [
+              s('g', R, [
                 i[1] ||
                   (i[1] = s(
                     'rect',
@@ -266,7 +266,7 @@ const V = { class: 'gauge-box' },
                     null,
                     -1
                   )),
-                s('g', Q, [
+                s('g', W, [
                   s(
                     'g',
                     {
@@ -335,11 +335,11 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  x = F(K, [['__scopeId', 'data-v-31b57ed5']]),
-  O = { class: 'body' },
-  J = { class: 'weather-dashboard' },
+  A = F(U, [['__scopeId', 'data-v-31b57ed5']]),
+  Q = { class: 'body' },
+  O = { class: 'weather-dashboard' },
   X = { class: 'dashboard-container' },
-  Y = { class: 'controls' },
+  K = { class: 'controls' },
   ss = ['onClick'],
   is = {
     __name: 'index',
@@ -362,15 +362,15 @@ const V = { class: 'gauge-box' },
       }
       return (l, B) => (
         h(),
-        r('div', O, [
-          s('div', J, [
+        r('div', Q, [
+          s('div', O, [
             B[0] || (B[0] = s('h1', null, '🌤️ 天气仪表盘', -1)),
             s('div', X, [
               k(v, { value: i.value }, null, 8, ['value']),
               k(f, { value: p.value }, null, 8, ['value']),
-              k(x, { value: e.value }, null, 8, ['value'])
+              k(A, { value: e.value }, null, 8, ['value'])
             ]),
-            s('div', Y, [
+            s('div', K, [
               (h(),
               r(
                 _,
@@ -396,7 +396,7 @@ const V = { class: 'gauge-box' },
         r('div', null, [
           i[0] ||
             (i[0] = E(
-              `<h1 id="【交互式天气仪表盘】项目带你快速了解-svg-知识" tabindex="-1">【交互式天气仪表盘】项目带你快速了解 SVG 知识 <a class="header-anchor" href="#【交互式天气仪表盘】项目带你快速了解-svg-知识" aria-label="Permalink to &quot;【交互式天气仪表盘】项目带你快速了解 SVG 知识&quot;">​</a></h1><div class="tip custom-block"><p class="custom-block-title">本文目标</p><ul><li>通过此项目来完成 SVG 的基础学习</li><li>完成此项目，会对 SVG 有个清晰的认识并能绘制出一些简易及稍微复杂的图案</li></ul></div><p><strong>工具</strong></p><ul><li><a href="https://www.jyshare.com/more/svgeditor/" target="_blank" rel="noreferrer">SVG 在线编辑器</a></li><li><a href="https://developer.mozilla.org/en-US/play" target="_blank" rel="noreferrer">SVG 在线编译器</a></li></ul><p><strong>文档</strong></p><ul><li><a href="https://www.runoob.com/svg/svg-reference.html" target="_blank" rel="noreferrer">SVG 参考手册</a></li><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Reference/Element/svg" target="_blank" rel="noreferrer">MDN 学习参考</a></li></ul><h2 id="svg-基础" tabindex="-1">SVG 基础 <a class="header-anchor" href="#svg-基础" aria-label="Permalink to &quot;SVG 基础&quot;">​</a></h2><p>SVG，可缩放矢量图形（Scalable Vector Graphics），是一种用于描述二维图形的 XML 标记语言。</p><h3 id="svg-常见属性" tabindex="-1">SVG 常见属性 <a class="header-anchor" href="#svg-常见属性" aria-label="Permalink to &quot;SVG 常见属性&quot;">​</a></h3><p>SVG 不但可以通过 <code>class</code>、<code>style</code> 来间接的变化样式，还可以直接用对应的属性修改。</p><table tabindex="0"><thead><tr><th>常见属性</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>元素的唯一标识符</td></tr><tr><td>class</td><td>元素的类名，用于CSS样式</td></tr><tr><td>style</td><td>元素的内联样式</td></tr><tr><td>transform</td><td>应用到元素上的变换</td></tr><tr><td>x, y</td><td><code>元素的位置</code></td></tr><tr><td>width, height</td><td><code>元素的尺寸</code></td></tr><tr><td>fill</td><td><code>填充颜色</code></td></tr><tr><td>stroke</td><td><code>描边颜色</code></td></tr><tr><td>stroke-width</td><td><code>描边宽度</code></td></tr><tr><td>opacity</td><td>透明度</td></tr><tr><td>visibility</td><td>元素的可见性</td></tr></tbody></table><h3 id="svg-在-html-页面的使用方式" tabindex="-1">SVG 在 HTML 页面的使用方式 <a class="header-anchor" href="#svg-在-html-页面的使用方式" aria-label="Permalink to &quot;SVG 在 HTML 页面的使用方式&quot;">​</a></h3><ol><li>SVG 的<code>代码可以直接嵌入</code>到 HTML 页面中</li><li><code>通过 HTML 的特定标签</code>，将 SVG 图像作为图片或文件嵌入到 HTML 页面中。</li><li><code>通过 CSS 的 background-image 属性</code>，可以将 SVG 图像作为背景图嵌入到 HTML 元素中。</li></ol><p>示例如下：</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-gauQT" id="tab-7jl5CNp" checked><label data-title="直接嵌入" for="tab-7jl5CNp">直接嵌入</label><input type="radio" name="group-gauQT" id="tab-0tE5qW0"><label data-title="&lt; img&gt; 标签" for="tab-0tE5qW0">&lt; img&gt; 标签</label><input type="radio" name="group-gauQT" id="tab-x_U2ULi"><label data-title="&lt; object&gt; 标签" for="tab-x_U2ULi">&lt; object&gt; 标签</label><input type="radio" name="group-gauQT" id="tab-Z-5m8Ku"><label data-title="&lt; iframe&gt; 标签" for="tab-Z-5m8Ku">&lt; iframe&gt; 标签</label><input type="radio" name="group-gauQT" id="tab-19oWU3s"><label data-title="&lt; a&gt; 标签" for="tab-19oWU3s">&lt; a&gt; 标签</label><input type="radio" name="group-gauQT" id="tab-obaxKBw"><label data-title="CSS 背景图" for="tab-obaxKBw">CSS 背景图</label></div><div class="blocks"><div class="language-html vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">svg</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> xmlns</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;http://www.w3.org/2000/svg&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;1.1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
+              `<h1 id="【交互式天气仪表盘】项目带你快速了解-svg-知识" tabindex="-1">【交互式天气仪表盘】项目带你快速了解 SVG 知识 <a class="header-anchor" href="#【交互式天气仪表盘】项目带你快速了解-svg-知识" aria-label="Permalink to &quot;【交互式天气仪表盘】项目带你快速了解 SVG 知识&quot;">​</a></h1><div class="tip custom-block"><p class="custom-block-title">本文目标</p><ul><li>通过此项目来完成 SVG 的基础学习</li><li>完成此项目，会对 SVG 有个清晰的认识并能绘制出一些简易及稍微复杂的图案</li></ul></div><p><strong>工具</strong></p><ul><li><a href="https://www.jyshare.com/more/svgeditor/" target="_blank" rel="noreferrer">SVG 在线编辑器</a></li><li><a href="https://developer.mozilla.org/en-US/play" target="_blank" rel="noreferrer">SVG 在线编译器</a></li></ul><p><strong>文档</strong></p><ul><li><a href="https://www.runoob.com/svg/svg-reference.html" target="_blank" rel="noreferrer">SVG 参考手册</a></li><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Reference/Element/svg" target="_blank" rel="noreferrer">MDN 学习参考</a></li></ul><h2 id="svg-基础" tabindex="-1">SVG 基础 <a class="header-anchor" href="#svg-基础" aria-label="Permalink to &quot;SVG 基础&quot;">​</a></h2><p>SVG，可缩放矢量图形（Scalable Vector Graphics），是一种用于描述二维图形的 XML 标记语言。</p><h3 id="svg-常见属性" tabindex="-1">SVG 常见属性 <a class="header-anchor" href="#svg-常见属性" aria-label="Permalink to &quot;SVG 常见属性&quot;">​</a></h3><p>SVG 不但可以通过 <code>class</code>、<code>style</code> 来间接的变化样式，还可以直接用对应的属性修改。</p><table tabindex="0"><thead><tr><th>常见属性</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>元素的唯一标识符</td></tr><tr><td>class</td><td>元素的类名，用于CSS样式</td></tr><tr><td>style</td><td>元素的内联样式</td></tr><tr><td>transform</td><td>应用到元素上的变换</td></tr><tr><td>x, y</td><td><code>元素的位置</code></td></tr><tr><td>width, height</td><td><code>元素的尺寸</code></td></tr><tr><td>fill</td><td><code>填充颜色</code></td></tr><tr><td>stroke</td><td><code>描边颜色</code></td></tr><tr><td>stroke-width</td><td><code>描边宽度</code></td></tr><tr><td>opacity</td><td>透明度</td></tr><tr><td>visibility</td><td>元素的可见性</td></tr></tbody></table><h3 id="svg-在-html-页面的使用方式" tabindex="-1">SVG 在 HTML 页面的使用方式 <a class="header-anchor" href="#svg-在-html-页面的使用方式" aria-label="Permalink to &quot;SVG 在 HTML 页面的使用方式&quot;">​</a></h3><ol><li>SVG 的<code>代码可以直接嵌入</code>到 HTML 页面中</li><li><code>通过 HTML 的特定标签</code>，将 SVG 图像作为图片或文件嵌入到 HTML 页面中。</li><li><code>通过 CSS 的 background-image 属性</code>，可以将 SVG 图像作为背景图嵌入到 HTML 元素中。</li></ol><p>示例如下：</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-sgc3e" id="tab-Df48xYA" checked><label data-title="直接嵌入" for="tab-Df48xYA">直接嵌入</label><input type="radio" name="group-sgc3e" id="tab-AGZEyDc"><label data-title="&lt; img&gt; 标签" for="tab-AGZEyDc">&lt; img&gt; 标签</label><input type="radio" name="group-sgc3e" id="tab-FnCEaRl"><label data-title="&lt; object&gt; 标签" for="tab-FnCEaRl">&lt; object&gt; 标签</label><input type="radio" name="group-sgc3e" id="tab-uGYqvi_"><label data-title="&lt; iframe&gt; 标签" for="tab-uGYqvi_">&lt; iframe&gt; 标签</label><input type="radio" name="group-sgc3e" id="tab-pv5JoUg"><label data-title="&lt; a&gt; 标签" for="tab-pv5JoUg">&lt; a&gt; 标签</label><input type="radio" name="group-sgc3e" id="tab-jNPgJ2j"><label data-title="CSS 背景图" for="tab-jNPgJ2j">CSS 背景图</label></div><div class="blocks"><div class="language-html vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">svg</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> xmlns</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;http://www.w3.org/2000/svg&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;1.1&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">   &lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">circle</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> cx</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;100&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> cy</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;50&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> r</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;40&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> stroke</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;black&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> stroke-width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;2&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> fill</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;red&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> /&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">svg</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-html vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">img</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;example.svg&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> alt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;SVG Image&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;200&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;200&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> &gt;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-html vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">object</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;example.svg&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;image/svg+xml&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;200&quot;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;"> height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;200&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  Your browser does not support SVG</span></span>
@@ -572,7 +572,7 @@ const V = { class: 'gauge-box' },
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&gt;</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div>`,
               6
             )),
-          k(x),
+          k(A),
           i[4] ||
             (i[4] = s(
               'h2',

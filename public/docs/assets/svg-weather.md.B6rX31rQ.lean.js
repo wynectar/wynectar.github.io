@@ -5,7 +5,7 @@ import {
   c as r,
   o as h,
   j as s,
-  e as A,
+  e as x,
   t as y,
   r as D,
   b,
@@ -19,11 +19,11 @@ import {
 } from './chunks/framework.DjAKN8N1.js';
 const V = { class: 'gauge-box' },
   G = { class: 'gauge-title' },
-  T = { width: '200', height: '150', viewBox: '0 0 200 150' },
-  M = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
-  L = ['fill'],
-  N = ['transform'],
-  P = { key: 0, class: 'gauge-value' },
+  M = { width: '200', height: '150', viewBox: '0 0 200 150' },
+  T = ['stroke', 'stroke-dasharray', 'stroke-dashoffset'],
+  P = ['fill'],
+  L = ['transform'],
+  N = { key: 0, class: 'gauge-value' },
   $ = {
     __name: 'GaugeBox',
     props: {
@@ -43,7 +43,7 @@ const V = { class: 'gauge-box' },
         r('div', V, [
           s('div', G, y(a.title), 1),
           (h(),
-          r('svg', T, [
+          r('svg', M, [
             l[1] ||
               (l[1] = s(
                 'path',
@@ -71,7 +71,7 @@ const V = { class: 'gauge-box' },
               },
               null,
               8,
-              M
+              T
             ),
             D(t.$slots, 'default', {}, void 0, !0),
             s(
@@ -88,15 +88,15 @@ const V = { class: 'gauge-box' },
                   },
                   null,
                   8,
-                  N
+                  L
                 ),
                 l[0] || (l[0] = s('circle', { cx: '100', cy: '110', r: '4' }, null, -1))
               ],
               8,
-              L
+              P
             )
           ])),
-          a.unit ? (h(), r('div', P, y(a.value) + ' ' + y(a.unit), 1)) : A('', !0)
+          a.unit ? (h(), r('div', N, y(a.value) + ' ' + y(a.unit), 1)) : x('', !0)
         ])
       );
     }
@@ -106,7 +106,7 @@ const V = { class: 'gauge-box' },
   I = ['y', 'height'],
   q = '#ff7675',
   m = 40,
-  z = {
+  j = {
     __name: 'GaugeTemperature',
     props: { value: { type: Number, default: 28 } },
     setup(a) {
@@ -170,9 +170,9 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  v = F(z, [['__scopeId', 'data-v-e22044d7']]),
-  W = '#74b9ff',
-  j = 100,
+  v = F(j, [['__scopeId', 'data-v-e22044d7']]),
+  z = '#74b9ff',
+  H = 100,
   f = {
     __name: 'GaugeHumidity',
     props: { value: { type: Number, default: 40 } },
@@ -181,7 +181,7 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '湿度计', value: a.value, maxValue: j, color: W, unit: '%' },
+          { title: '湿度计', value: a.value, maxValue: H, color: z, unit: '%' },
           {
             default: C(
               () =>
@@ -243,11 +243,11 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  H = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
-  Q = { transform: 'translate(175, 40)' },
-  U = '#a29bfe',
-  R = 30,
-  K = {
+  R = { style: { filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' } },
+  W = { transform: 'translate(175, 40)' },
+  J = '#a29bfe',
+  Y = 30,
+  U = {
     __name: 'GaugeWind',
     props: { value: { type: Number, default: 8 } },
     setup(a) {
@@ -255,10 +255,10 @@ const V = { class: 'gauge-box' },
         h(),
         b(
           u,
-          { title: '风速计', value: a.value, maxValue: R, color: U, unit: 'km/h' },
+          { title: '风速计', value: a.value, maxValue: Y, color: J, unit: 'km/h' },
           {
             default: C(() => [
-              s('g', H, [
+              s('g', R, [
                 i[1] ||
                   (i[1] = s(
                     'rect',
@@ -266,7 +266,7 @@ const V = { class: 'gauge-box' },
                     null,
                     -1
                   )),
-                s('g', Q, [
+                s('g', W, [
                   s(
                     'g',
                     {
@@ -335,11 +335,11 @@ const V = { class: 'gauge-box' },
       );
     }
   },
-  x = F(K, [['__scopeId', 'data-v-31b57ed5']]),
-  O = { class: 'body' },
-  J = { class: 'weather-dashboard' },
+  A = F(U, [['__scopeId', 'data-v-31b57ed5']]),
+  Q = { class: 'body' },
+  O = { class: 'weather-dashboard' },
   X = { class: 'dashboard-container' },
-  Y = { class: 'controls' },
+  K = { class: 'controls' },
   ss = ['onClick'],
   is = {
     __name: 'index',
@@ -362,15 +362,15 @@ const V = { class: 'gauge-box' },
       }
       return (l, B) => (
         h(),
-        r('div', O, [
-          s('div', J, [
+        r('div', Q, [
+          s('div', O, [
             B[0] || (B[0] = s('h1', null, '🌤️ 天气仪表盘', -1)),
             s('div', X, [
               k(v, { value: i.value }, null, 8, ['value']),
               k(f, { value: p.value }, null, 8, ['value']),
-              k(x, { value: e.value }, null, 8, ['value'])
+              k(A, { value: e.value }, null, 8, ['value'])
             ]),
-            s('div', Y, [
+            s('div', K, [
               (h(),
               r(
                 _,
@@ -401,7 +401,7 @@ const V = { class: 'gauge-box' },
           i[2] || (i[2] = E('', 9)),
           k(f),
           i[3] || (i[3] = E('', 6)),
-          k(x),
+          k(A),
           i[4] ||
             (i[4] = s(
               'h2',
