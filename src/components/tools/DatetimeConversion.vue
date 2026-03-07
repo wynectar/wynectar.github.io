@@ -1,28 +1,60 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 export default defineComponent({
   setup() {
     // 第二栏
-    const spaceText = ref("");
-    const isGoover = ref(false);
-    function spaceTimestampConfirm(ts: any) {
-      if (!ts) ts = Date.now();
-      const residueTs = ts - Date.now();
-      isGoover.value = residueTs < 0 ? true : false;
-      const times = Math.abs(residueTs);
-      const time = [24 * 3600 * 1000, 3600 * 1000, 60 * 1000, 1000];
-      const d = Math.floor(times / time[0]);
-      const h = Math.floor((times % time[0]) / time[1]);
-      const m = Math.floor(((times % time[0]) % time[1]) / time[2]);
-      const s = Math.floor((((times % time[0]) % time[1]) % time[2]) / time[3]);
-      let str = "";
-      if (d) str += `${d}天`;
-      if (h) str += `${h}小时`;
-      if (m) str += `${m}分钟`;
-      if (s) str += `${s}秒`;
-      spaceText.value = str;
+    const startTimestamp: any = ref(null)
+    const endTimestamp = ref(null)
+    const timeDifference = computed(() => {
+      if (!startTimestamp.value || !endTimestamp.value) {
+        return [
+          { label: '正常计算', value: '', unit: '', over: false },
+          { label: '按天计算', value: '', unit: '天', over: false },
+          { label: '按时计算', value: '', unit: '时', over: false },
+          { label: '按分计算', value: '', unit: '分', over: false },
+          { label: '按秒计算', value: '', unit: '秒', over: false },
+        ]
+      } else {
+        let td = endTimestamp.value - startTimestamp.value
+        let over = false
+        if (td < 0) {
+          td *= -1
+          over = true
+        }
+        const time = [24 * 3600 * 1000, 3600 * 1000, 60 * 1000, 1000];
+        const d = Math.floor(td / time[0]);
+        const h = Math.floor((td % time[0]) / time[1]);
+        const m = Math.floor(((td % time[0]) % time[1]) / time[2]);
+        const s = Math.floor((((td % time[0]) % time[1]) % time[2]) / time[3]);
+        let str = "";
+        if (d) str += `${d}天`;
+        if (h) str += `${h}时`;
+        if (m) str += `${m}分`;
+        if (s) str += `${s}秒`;
+
+        return [
+          { label: '正常计算', value: str, unit: '', over },
+          { label: '按天计算', value: Number((td / time[0]).toFixed(2)), unit: '天', over },
+          { label: '按时计算', value: Number((td / time[1]).toFixed(2)), unit: '时', over },
+          { label: '按分计算', value: Number((td / time[2]).toFixed(2)), unit: '分', over },
+          { label: '按秒计算', value: Number((td / time[3]).toFixed(0)), unit: '秒', over },
+        ]
+      }
+    })
+    const checked = ref(false)
+    let timer: any = null
+    function changeSwitch(val: boolean) {
+      checked.value = val
+      if (val) {
+        timer = setInterval(() => {
+          startTimestamp.value = Date.now()
+        }, 1000)
+      } else {
+        if (timer) clearInterval(timer)
+      }
     }
+
     // 第三栏
     const spaceStartDate = ref(Date.now());
     const spaceEndDate: any = ref();
@@ -44,12 +76,13 @@ export default defineComponent({
     return {
       // 第一栏
       timestamp: ref(null),
-      isDatetime: ref(true),
+      timestamp2: ref(null),
       // 第二栏
-      spaceTimestamp: ref(null),
-      spaceText,
-      isGoover,
-      spaceTimestampConfirm,
+      startTimestamp,
+      endTimestamp,
+      timeDifference,
+      checked,
+      changeSwitch,
       // 第三栏
       spaceStartDate,
       spaceEndDate,
@@ -71,33 +104,80 @@ export default defineComponent({
 
 <template>
   <!-- 第一栏 -->
-  <n-flex :style="{ flexDirection: isDatetime ? 'row' : 'row-reverse' }">
-    <n-date-picker v-model:value="timestamp" type="datetime" placeholder="请选择日期时间" :disabled="!isDatetime" clearable />
-    <n-button type="primary" @click="isDatetime = !isDatetime">切换</n-button>
-    <n-input-number v-model:value="timestamp" type="text" placeholder="请输入时间戳" :disabled="isDatetime" />
+  <n-flex align="center" class="flex-bg">
+    <n-date-picker v-model:value="timestamp" type="datetime" placeholder="请选择日期时间" clearable style="width:216px" />
+    <span>日期转时间戳：</span>
+    <span class="text-color">{{ timestamp }} 毫秒</span>
+  </n-flex>
+  <n-flex align="center" class="flex-bg flex-margin">
+    <n-input-number v-model:value="timestamp2" type="text" placeholder="请输入时间戳" step="1000" />
+    <span>时间戳转日期：</span>
+    <n-date-picker v-model:value="timestamp2" type="datetime" :show="false" disabled class="timestamp" placeholder="" />
   </n-flex>
   <!-- 第二栏 -->
-  <n-flex align="center" style="margin: 20px 0">
-    <span>当前时间距离某个时间的时长：</span>
-    <n-button type="primary" ghost> 距离 </n-button>
-    <n-date-picker v-model:value="spaceTimestamp" type="datetime" placeholder="某个日期时间" clearable
-      :on-confirm="spaceTimestampConfirm" :on-clear="spaceTimestampConfirm" />
-    <n-button type="primary" ghost>
-      {{ isGoover ? "已过去" : "还有" }}
-    </n-button>
-    <n-button type="primary" dashed>
-      {{ spaceText }}
-    </n-button>
+  <n-flex align="center" class="flex-bg flex-margin">
+    <n-flex vertical justify="center" class="flex-border">
+      <n-switch size="large" :value="checked" @update:value="changeSwitch">
+        <template #checked>
+          此时此刻
+        </template>
+        <template #unchecked>
+          开始时间
+        </template>
+      </n-switch>
+      <n-date-picker v-model:value="startTimestamp" type="datetime" placeholder="开始时间" clearable :disabled="checked" />
+    </n-flex>
+    <span>与</span>
+    <n-date-picker v-model:value="endTimestamp" type="datetime" placeholder="结束时间" clearable />
+    <span>相差</span>
+    <n-flex vertical justify="center" class="flex-border">
+      <div v-for="(v, i) in timeDifference" :key="i">
+        <span>{{ v.label }}:</span>
+        <span :style="{ margin: '0 5px', color: v.over ? '#f0a020' : '#18a058' }">{{ v.value }}</span>
+        <span>{{ v.unit }}</span>
+      </div>
+    </n-flex>
   </n-flex>
   <!-- 第三栏 -->
-  <n-flex align="center">
-    <span>某个时间选择间隔后的时间：</span>
-    <n-date-picker v-model:value="spaceStartDate" type="datetime" placeholder="开始日期时间" clearable />
+  <n-flex align="center" class="flex-bg">
+    <n-date-picker v-model:value="spaceStartDate" type="datetime" placeholder="开始时间" clearable />
     <n-input-number v-model:value="spaceNumber" type="text" placeholder="间隔" :min="0" class="space" />
     <n-select v-model:value="spaceType" :options="options" style="width: 80px" />
     <n-button type="primary" class="space" @click="conversionEnd">
-      查询
+      计算间隔后的时间
     </n-button>
-    <n-date-picker v-model:value="spaceEndDate" type="datetime" placeholder="结束日期时间" clearable disabled />
+    <n-date-picker v-model:value="spaceEndDate" type="datetime" placeholder="结束时间" clearable disabled />
   </n-flex>
 </template>
+
+<style scoped>
+.flex-border {
+  border: 1px dashed;
+  padding: 10px;
+}
+
+.flex-bg {
+  background-color: rgba(26, 160, 88, 0.1);
+  padding: 20px;
+}
+
+.flex-margin {
+  margin: 20px 0;
+}
+
+.text-color {
+  color: #18a058;
+}
+
+.timestamp :deep(.n-input.n-input--disabled) {
+  background-color: transparent;
+}
+
+.timestamp :deep(.n-input.n-input--disabled) .n-input__input-el {
+  color: #18a058;
+}
+
+.timestamp :deep(.n-input.n-input--disabled) .n-input__suffix {
+  display: none;
+}
+</style>

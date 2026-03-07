@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-const height = ref(0);
-const weight = ref(0);
+const height = ref(null);
+const weight = ref(null);
 const result = ref("");
 const resultType = ref("success");
 function equalTo() {
@@ -20,21 +20,16 @@ function equalTo() {
 }
 </script>
 <template>
-  <n-flex>
-    <n-input-number v-model:value="weight" :min="0" :show-button="false">
+  <n-flex align="center" class="flex-bg">
+    <n-input-number v-model:value="weight" :min="0" :show-button="false" placeholder="请输入体重">
       <template #suffix> kg </template>
     </n-input-number>
-    <n-button type="primary" ghost> /</n-button>
-    <n-input-number
-      v-model:value="height"
-      :min="0"
-      :precision="2"
-      :show-button="false"
-    >
+    <span>除以</span>
+    <n-input-number v-model:value="height" :min="0" :precision="2" :show-button="false" placeholder="请输入身高">
       <template #suffix> m </template>
     </n-input-number>
-    <sup>2</sup>
-    <n-button type="primary" @click="equalTo"> = </n-button>
+    <sup style="position: relative;top: -15px;left: -5px;">2</sup>
+    <n-button type="primary" @click="equalTo"> 等于 </n-button>
     <n-button :type="resultType" dashed style="margin-left: 10px">
       {{ result }}
     </n-button>
@@ -51,3 +46,10 @@ function equalTo() {
     <n-button type="error" ghost> (32, +∞) 重度肥胖 </n-button>
   </n-flex>
 </template>
+
+<style scoped>
+.flex-bg {
+  background-color: rgba(26, 160, 88, 0.1);
+  padding: 20px;
+}
+</style>
